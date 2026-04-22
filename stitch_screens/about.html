@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us - Silver Wings Defence</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#111417",
+                        "on-surface-variant": "#c4c6cf",
+                        "inverse-surface": "#e1e2e7",
+                        "on-error": "#690005",
+                        "primary-container": "#001f3f",
+                        "on-secondary": "#2f3131",
+                        "on-error-container": "#ffdad6",
+                        "on-surface": "#e1e2e7",
+                        "primary-fixed": "#d4e3ff",
+                        "surface-bright": "#37393d",
+                        "primary-fixed-dim": "#afc8f0",
+                        "tertiary-fixed": "#ffe088",
+                        "secondary": "#c6c6c6",
+                        "on-primary-fixed": "#001c3a",
+                        "primary": "#afc8f0",
+                        "surface-container": "#1d2023",
+                        "on-secondary-container": "#b8b8b8",
+                        "on-tertiary-fixed": "#241a00",
+                        "tertiary-container": "#cca830",
+                        "outline": "#8e9198",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "surface-container-low": "#191c1f",
+                        "on-primary-fixed-variant": "#2f486a",
+                        "outline-variant": "#43474e",
+                        "secondary-fixed": "#e3e2e2",
+                        "on-secondary-fixed-variant": "#464747",
+                        "surface-container-high": "#282a2e",
+                        "on-primary-container": "#6f88ad",
+                        "error-container": "#93000a",
+                        "inverse-primary": "#476083",
+                        "on-primary": "#163152",
+                        "surface-container-lowest": "#0c0e12",
+                        "tertiary": "#eac349",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "inverse-on-surface": "#2e3134",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "on-tertiary-container": "#4f3e00",
+                        "surface": "#111417",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "on-background": "#e1e2e7",
+                        "surface-dim": "#111417",
+                        "error": "#ffb4ab",
+                        "secondary-container": "#484949",
+                        "surface-tint": "#afc8f0",
+                        "surface-container-highest": "#323539",
+                        "on-tertiary": "#3c2f00",
+                        "surface-variant": "#323539",
+                        "military-green": "#4B5320"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "0px"
+                    },
+                    "spacing": {},
+                    "fontFamily": {
+                        "headline": ["Space Grotesk", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .grid-overlay {
+            background-image: 
+                linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen antialiased selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar (Generated from JSON) -->
+<nav class="bg-[#111417]/90 backdrop-blur-md font-['Space_Grotesk'] tracking-tight uppercase fixed top-0 w-full z-50 rounded-none shadow-[0_20px_40px_rgba(0,0,0,0.4)] border-b border-[#191c1f]">
+<div class="flex justify-between items-center px-10 py-6 w-full max-w-full">
+<a class="text-2xl font-black tracking-tighter text-[#afc8f0]" href="#">SILVER WINGS DEFENCE</a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-[#e1e2e7] font-medium hover:text-[#afc8f0] hover:bg-[#323539] transition-all duration-300 px-3 py-1" href="#">Home</a>
+<a class="text-[#eac349] font-bold underline underline-offset-8 decoration-2 hover:text-[#afc8f0] hover:bg-[#323539] transition-all duration-300 px-3 py-1" href="#">About</a>
+<a class="text-[#e1e2e7] font-medium hover:text-[#afc8f0] hover:bg-[#323539] transition-all duration-300 px-3 py-1" href="#">Services</a>
+<a class="text-[#e1e2e7] font-medium hover:text-[#afc8f0] hover:bg-[#323539] transition-all duration-300 px-3 py-1" href="#">Products</a>
+<a class="text-[#e1e2e7] font-medium hover:text-[#afc8f0] hover:bg-[#323539] transition-all duration-300 px-3 py-1" href="#">Innovation</a>
+<a class="text-[#e1e2e7] font-medium hover:text-[#afc8f0] hover:bg-[#323539] transition-all duration-300 px-3 py-1" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-gradient-to-br from-primary to-on-primary-container text-on-primary font-bold uppercase px-6 py-2 rounded-none hover:brightness-110 transition-all shadow-[0_20px_40px_rgba(0,0,0,0.4)] hidden lg:block">CLIENT LOGIN</button>
+<button class="text-[#afc8f0] hover:bg-[#323539] p-2 transition-all duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="shield_locked">shield_locked</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-32 pb-24 px-6 md:px-12 lg:px-24 max-w-[1920px] mx-auto flex flex-col gap-32">
+<!-- Hero Section: Securing the Future -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+<div class="lg:col-span-7 flex flex-col gap-8 z-10">
+<span class="font-label text-sm uppercase tracking-[0.2em] text-tertiary">Initiative Overview</span>
+<h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tight text-on-surface leading-tight">
+                    SECURING THE FUTURE<br/>
+<span class="text-primary-fixed-dim">THROUGH AERIAL SUPERIORITY.</span>
+</h1>
+<p class="font-body text-on-surface-variant text-lg max-w-2xl leading-relaxed">
+                    Silver Wings Defence was forged in the crucible of modern geopolitical complexity. We engineer autonomous Unmanned Aerial Vehicles (UAVs) and advanced surveillance matrices that provide uncompromised situational awareness for mission-critical operations.
+                </p>
+<div class="flex gap-4 mt-4">
+<div class="bg-surface-container-high px-6 py-4 flex flex-col gap-1 border-l-2 border-tertiary">
+<span class="font-headline text-3xl font-bold text-on-surface">2010</span>
+<span class="font-label text-xs uppercase text-on-surface-variant tracking-wider">Foundation Year</span>
+</div>
+<div class="bg-surface-container-high px-6 py-4 flex flex-col gap-1 border-l-2 border-primary">
+<span class="font-headline text-3xl font-bold text-on-surface">Mk-VII</span>
+<span class="font-label text-xs uppercase text-on-surface-variant tracking-wider">Current Gen Platform</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 relative h-[500px] w-full bg-surface-container-low overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+<div class="absolute inset-0 grid-overlay z-10 opacity-20"></div>
+<img alt="Tactical drone silhouette" class="absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-60" data-alt="High-contrast silhouette of an advanced military drone against a dark, cloudy sky, cold blue cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkAuqBBI9XR1dXIBcybzR2fytTQYE-Iv4bqYJLDUgcrdqDnNixgHzHvZZNZ7IoGHYpEVt0oXEX4BmPySwidDia0lxUgUNaw_Vy635cM2AE9_cuMVXWFW8wSHRoTe__lhtEtUL7lwJs0c6syZVQw0BcqdNG_OKzuJPkiCVXYJsr-HsWzhwcjSW6iaimit5ifDRCrrc-f58ah8MP1EzRF-qGXHUZoqeEIiYQtT46qlM1-stA2ww5p0Ru8_FzaUJ4CjpOFkg9lCp5V70"/>
+<div class="absolute bottom-6 left-6 z-20 flex flex-col gap-1">
+<span class="font-headline text-sm text-tertiary tracking-widest uppercase">Asset Confirmed</span>
+<span class="font-label text-xs text-on-surface-variant font-mono">LAT: 45.4215 N | LON: 75.6972 W</span>
+</div>
+</div>
+</section>
+<!-- Mission, Vision & Values (Bento Grid) -->
+<section class="flex flex-col gap-12">
+<div class="flex flex-col gap-2">
+<h2 class="font-headline text-4xl font-bold tracking-tight text-on-surface">CORE DOCTRINE</h2>
+<div class="h-1 w-16 bg-primary"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Mission -->
+<div class="bg-surface-container-high p-10 flex flex-col gap-6 relative overflow-hidden group hover:bg-surface-container-highest transition-colors duration-500">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-8xl" data-icon="my_location">my_location</span>
+</div>
+<span class="material-symbols-outlined text-tertiary text-4xl" data-icon="track_changes" data-weight="fill">track_changes</span>
+<h3 class="font-headline text-2xl font-bold text-on-surface uppercase tracking-wide">Mission</h3>
+<p class="font-body text-on-surface-variant text-sm leading-relaxed z-10">
+                        To engineer unyielding tactical advantages through precision aerospace technology, ensuring total domain awareness for our partners in theaters of high consequence.
+                    </p>
+</div>
+<!-- Vision -->
+<div class="bg-surface-container-low border border-outline-variant/15 p-10 flex flex-col gap-6 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-8xl" data-icon="visibility">visibility</span>
+</div>
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="satellite_alt" data-weight="fill">satellite_alt</span>
+<h3 class="font-headline text-2xl font-bold text-on-surface uppercase tracking-wide">Vision</h3>
+<p class="font-body text-on-surface-variant text-sm leading-relaxed z-10">
+                        A future where asymmetrical threats are neutralized autonomously, utilizing decentralized intelligence networks and zero-latency decision matrices.
+                    </p>
+</div>
+<!-- Values Stack -->
+<div class="flex flex-col gap-6">
+<!-- Value 1: Innovation -->
+<div class="bg-surface-container-highest p-6 flex items-start gap-4">
+<span class="material-symbols-outlined text-on-surface" data-icon="memory">memory</span>
+<div>
+<h4 class="font-headline text-lg font-bold text-on-surface uppercase">Relentless Innovation</h4>
+<p class="font-body text-on-surface-variant text-xs mt-1">Pushing the boundary of autonomous flight algorithms.</p>
+</div>
+</div>
+<!-- Value 2: Security -->
+<div class="bg-surface-container-highest p-6 flex items-start gap-4 border-l-4 border-military-green">
+<span class="material-symbols-outlined text-military-green" data-icon="gpp_good" data-weight="fill">gpp_good</span>
+<div>
+<h4 class="font-headline text-lg font-bold text-on-surface uppercase">Ironclad Security</h4>
+<p class="font-body text-on-surface-variant text-xs mt-1">Quantum-resistant encryption on all data uplinks.</p>
+</div>
+</div>
+<!-- Value 3: Trust -->
+<div class="bg-surface-container-highest p-6 flex items-start gap-4">
+<span class="material-symbols-outlined text-on-surface" data-icon="handshake">handshake</span>
+<div>
+<h4 class="font-headline text-lg font-bold text-on-surface uppercase">Operational Trust</h4>
+<p class="font-body text-on-surface-variant text-xs mt-1">Reliability guaranteed in extreme environmental conditions.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Leadership in Technology -->
+<section class="bg-surface-container-low p-8 md:p-16 relative overflow-hidden">
+<div class="absolute inset-0 grid-overlay opacity-10"></div>
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="flex flex-col gap-6">
+<span class="font-label text-sm uppercase tracking-[0.2em] text-primary">Strategic Advantage</span>
+<h2 class="font-headline text-4xl md:text-5xl font-bold tracking-tight text-on-surface leading-tight">
+                        LEADERSHIP IN<br/>DEFENSE TECHNOLOGY
+                    </h2>
+<p class="font-body text-on-surface-variant text-base leading-relaxed">
+                        We do not merely supply equipment; we integrate seamlessly into national defense architectures. Our systems are designed to operate independently or as part of a swarm, providing scalable responses to escalating kinetic threats.
+                    </p>
+<ul class="flex flex-col gap-4 mt-4">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="check_circle" data-weight="fill">check_circle</span>
+<span class="font-body text-sm text-on-surface">AI-Driven Target Acquisition</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="check_circle" data-weight="fill">check_circle</span>
+<span class="font-body text-sm text-on-surface">Beyond Visual Line of Sight (BVLOS) Capable</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="check_circle" data-weight="fill">check_circle</span>
+<span class="font-body text-sm text-on-surface">EMP Hardened Infrastructure</span>
+</li>
+</ul>
+<button class="mt-8 self-start border border-tertiary text-tertiary font-headline font-bold uppercase tracking-widest px-8 py-3 hover:bg-tertiary/10 transition-colors">
+                        View Technical Specs
+                    </button>
+</div>
+<div class="relative h-[400px] w-full bg-surface-container-lowest shadow-[0_20px_40px_rgba(0,0,0,0.4)] p-4 flex flex-col justify-between">
+<img alt="Technology Interface" class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-30" data-alt="Abstract macro shot of a complex circuit board with glowing blue and silver traces, conveying high-tech processing power" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyr-vunu6g6_zGpxg1tw9l1w4_KXS72fzL0O-fnZGOE0od4K3Ck1pOPMau4tzY3jFdz5HX8tWrri6z9JZgegenB2m8v84VO3r2EInerH8C3txch_G51ahizQL2CtqBX7DPsMAazywno8clvY3JFKoNa_yuku_cKE3IzHtDleK9hwgf2Dj6KSopbz4Slgmz9onKG-NVg4jk6lZGjI-yc4uryc-9pGS7SyvueTFfkTc76cJyzpgQoayyqWnxw7Z0hUaOVHTs5UmIgZw"/>
+<div class="flex justify-between items-center z-10 border-b border-outline-variant/30 pb-2">
+<span class="font-label text-xs text-on-surface-variant font-mono">SYS_STATUS: OPTIMAL</span>
+<div class="h-2 w-2 bg-military-green rounded-full shadow-[0_0_10px_#4B5320]"></div>
+</div>
+<div class="z-10 font-mono text-sm text-primary/70 leading-relaxed max-w-[80%]">
+                        &gt; INITIATING HANDSHAKE PROTOCOL<br/>
+                        &gt; SECURING UPLINK... [OK]<br/>
+                        &gt; DEPLOYING SENSOR MATRIX... [OK]<br/>
+                        &gt; AWAITING COMMAND DIRECTIVE...
+                    </div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Generated from JSON) -->
+<footer class="bg-[#191c1f] font-['Inter'] text-sm tracking-widest uppercase rounded-none w-full border-t border-[#43474e]/15">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-12 py-16 w-full max-w-[1920px] mx-auto">
+<div class="flex flex-col gap-4">
+<span class="text-xl font-bold text-[#e1e2e7] font-headline">SILVER WINGS DEFENCE</span>
+<p class="text-[#e1e2e7]/60 text-xs">© 2024 SILVER WINGS DEFENCE. TACTICAL PRECISION SECURED.</p>
+</div>
+<div class="flex flex-wrap gap-x-8 gap-y-4 md:justify-end items-center">
+<a class="text-[#e1e2e7]/60 hover:text-[#eac349] transition-colors" href="#">Privacy Policy</a>
+<a class="text-[#e1e2e7]/60 hover:text-[#eac349] transition-colors" href="#">Terms of Service</a>
+<a class="text-[#e1e2e7]/60 hover:text-[#eac349] transition-colors" href="#">Careers</a>
+<a class="text-[#e1e2e7]/60 hover:text-[#eac349] transition-colors" href="#">Download Brochures</a>
+<a class="text-[#e1e2e7]/60 hover:text-[#eac349] transition-colors" href="#">Partner Portal</a>
+</div>
+</div>
+</footer>
+</body></html>

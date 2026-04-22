@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Silver Wings Defence - Services</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#111417",
+                        "on-surface-variant": "#c4c6cf",
+                        "inverse-surface": "#e1e2e7",
+                        "on-error": "#690005",
+                        "primary-container": "#001f3f",
+                        "on-secondary": "#2f3131",
+                        "on-error-container": "#ffdad6",
+                        "on-surface": "#e1e2e7",
+                        "primary-fixed": "#d4e3ff",
+                        "surface-bright": "#37393d",
+                        "primary-fixed-dim": "#afc8f0",
+                        "tertiary-fixed": "#ffe088",
+                        "secondary": "#c6c6c6",
+                        "on-primary-fixed": "#001c3a",
+                        "primary": "#afc8f0",
+                        "surface-container": "#1d2023",
+                        "on-secondary-container": "#b8b8b8",
+                        "on-tertiary-fixed": "#241a00",
+                        "tertiary-container": "#cca830",
+                        "outline": "#8e9198",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "surface-container-low": "#191c1f",
+                        "on-primary-fixed-variant": "#2f486a",
+                        "outline-variant": "#43474e",
+                        "secondary-fixed": "#e3e2e2",
+                        "on-secondary-fixed-variant": "#464747",
+                        "surface-container-high": "#282a2e",
+                        "on-primary-container": "#6f88ad",
+                        "error-container": "#93000a",
+                        "inverse-primary": "#476083",
+                        "on-primary": "#163152",
+                        "surface-container-lowest": "#0c0e12",
+                        "tertiary": "#eac349",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "inverse-on-surface": "#2e3134",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "on-tertiary-container": "#4f3e00",
+                        "surface": "#111417",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "on-background": "#e1e2e7",
+                        "surface-dim": "#111417",
+                        "error": "#ffb4ab",
+                        "secondary-container": "#484949",
+                        "surface-tint": "#afc8f0",
+                        "surface-container-highest": "#323539",
+                        "on-tertiary": "#3c2f00",
+                        "surface-variant": "#323539"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "0px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #111417; color: #e1e2e7; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Space Grotesk', sans-serif; }
+        .grid-overlay {
+            background-image: 
+                linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 rounded-none bg-[#111417]/90 backdrop-blur-md shadow-[0_20px_40px_rgba(0,0,0,0.4)] border-b border-transparent">
+<div class="flex justify-between items-center px-10 py-6 w-full max-w-full">
+<div class="text-2xl font-black tracking-tighter text-[#afc8f0]">SILVER WINGS DEFENCE</div>
+<div class="hidden md:flex gap-8">
+<a class="text-[#e1e2e7] font-medium font-['Space_Grotesk'] tracking-tight uppercase hover:text-[#afc8f0] hover:bg-[#323539] transition-all duration-300 px-3 py-2" href="#">Home</a>
+<a class="text-[#e1e2e7] font-medium font-['Space_Grotesk'] tracking-tight uppercase hover:text-[#afc8f0] hover:bg-[#323539] transition-all duration-300 px-3 py-2" href="#">About</a>
+<a class="text-[#eac349] font-bold underline underline-offset-8 decoration-2 font-['Space_Grotesk'] tracking-tight uppercase px-3 py-2 relative group" href="#">
+                    Services
+                    <span class="absolute inset-0 bg-tertiary/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></span>
+</a>
+<a class="text-[#e1e2e7] font-medium font-['Space_Grotesk'] tracking-tight uppercase hover:text-[#afc8f0] hover:bg-[#323539] transition-all duration-300 px-3 py-2" href="#">Products</a>
+<a class="text-[#e1e2e7] font-medium font-['Space_Grotesk'] tracking-tight uppercase hover:text-[#afc8f0] hover:bg-[#323539] transition-all duration-300 px-3 py-2" href="#">Innovation</a>
+<a class="text-[#e1e2e7] font-medium font-['Space_Grotesk'] tracking-tight uppercase hover:text-[#afc8f0] hover:bg-[#323539] transition-all duration-300 px-3 py-2" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-gradient-to-r from-primary to-on-primary-container text-on-primary font-bold uppercase px-6 py-3 hover:brightness-110 transition-all font-headline tracking-widest text-sm rounded-none border border-transparent hover:shadow-[0_0_20px_rgba(175,200,240,0.3)]">CLIENT LOGIN</button>
+<button class="text-primary hover:text-tertiary transition-colors">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 0;">shield_locked</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-6 md:px-12 lg:px-24 max-w-[1600px] mx-auto">
+<!-- Header -->
+<header class="mb-20">
+<p class="text-tertiary font-label text-sm tracking-widest uppercase mb-4 pl-4 border-l-2 border-tertiary">Operational Capabilities</p>
+<h1 class="text-5xl md:text-7xl font-headline font-bold text-on-surface tracking-tighter mb-6">TACTICAL SERVICES</h1>
+<p class="text-on-surface-variant max-w-2xl text-lg leading-relaxed border-l border-outline-variant/30 pl-6 py-2">Precision-engineered solutions for modern defense scenarios. Deploying advanced intelligence, autonomous systems, and strategic training to secure critical infrastructure and battlefield supremacy.</p>
+</header>
+<!-- Services Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 relative z-10">
+<!-- Service 1: Defence Solutions -->
+<article class="bg-surface-container-low group hover:bg-surface-container-high transition-colors duration-500 relative overflow-hidden flex flex-col h-full ring-1 ring-outline-variant/15">
+<div class="absolute inset-0 grid-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+<div class="absolute top-0 right-0 p-4 opacity-50 text-xs font-mono text-on-surface-variant z-10">SRV-01 // UAV_SYS</div>
+<div class="h-64 relative bg-surface-container-lowest overflow-hidden border-b border-surface-container">
+<img alt="Military drone flying against a moody sky" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105 opacity-80 mix-blend-luminosity" data-alt="high contrast low angle shot of military reconnaissance drone in flight against dark stormy sky, technical aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3ziaS9025brJf73yS-4xAUTttOuY8gjCGwNTqv9jTy60ekk5L40YMOdiOJcbZaPlmfOerju9ujQouWXZouZyj_sES_drOO2RUfeWTX6AmbKWKvacynfYaISsWgpeF7ovnNzlINf1ilGusOf94mzuENog0PbJMg-CoEwH2-sh4zpK9wAktU4SqUgayy6kScU281SOBl1tdO5l5aeXpGF3rsW99dQYa15D6YjhV1RB-Tmlew8P3UTc1fgyG-6Yu2AGWEhl2TUr0yJ0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent"></div>
+</div>
+<div class="p-8 lg:p-10 flex-grow flex flex-col relative z-20">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 bg-surface-container-highest flex items-center justify-center ring-1 ring-tertiary/30">
+<span class="material-symbols-outlined text-tertiary text-2xl" style="font-variation-settings: 'FILL' 0;">flight_takeoff</span>
+</div>
+<h2 class="text-2xl font-headline font-semibold text-on-surface tracking-tight uppercase">Defence Solutions</h2>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8 flex-grow">Deployment of advanced Unmanned Aerial Vehicles (UAVs) and autonomous tactical systems. Engineered for high-threat environments, providing real-time battlefield reconnaissance and precision strike capabilities.</p>
+<a class="inline-flex items-center gap-2 text-primary font-label text-sm uppercase tracking-widest hover:text-tertiary transition-colors w-max group/link mt-auto" href="#">
+                        Learn More 
+                        <span class="material-symbols-outlined text-lg transform group-hover/link:translate-x-1 transition-transform" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</a>
+</div>
+<div class="h-1 w-full bg-surface-container group-hover:bg-tertiary transition-colors duration-500"></div>
+</article>
+<!-- Service 2: Security Systems -->
+<article class="bg-surface-container-low group hover:bg-surface-container-high transition-colors duration-500 relative overflow-hidden flex flex-col h-full ring-1 ring-outline-variant/15">
+<div class="absolute inset-0 grid-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+<div class="absolute top-0 right-0 p-4 opacity-50 text-xs font-mono text-on-surface-variant z-10">SRV-02 // BRD_MON</div>
+<div class="h-64 relative bg-surface-container-lowest overflow-hidden border-b border-surface-container">
+<img alt="Server room with green lights" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105 opacity-80 mix-blend-luminosity" data-alt="dark server room illuminated by sterile green LEDs, high tech surveillance data center, sharp metallic textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnF4Ib0AS_2N-Z7J9KmufBdkxFI3fJ8fcTGKNCCQPwbyvnd40rfObocsQTk97DaFoFsjRypn5HxaTR2Ix4s9L3kA89ngL5p-bn5eNvinwuTWGlCzSjzzCbptwQZ_eGpiHkY3IFK8022T0uXvcNIQPQJvd-7TO5hd7U2OJg_RkfWFpJ8GzqPtUjNeZYZRh0McqKE0bAb3VXLUiPEoSSi2gWSvb8pTplDQvZCr4BjzbVFqmCgzB-4TPlEguTCHsG636q3h_swKPcuiU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent"></div>
+</div>
+<div class="p-8 lg:p-10 flex-grow flex flex-col relative z-20">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 bg-surface-container-highest flex items-center justify-center ring-1 ring-tertiary/30">
+<span class="material-symbols-outlined text-tertiary text-2xl" style="font-variation-settings: 'FILL' 0;">radar</span>
+</div>
+<h2 class="text-2xl font-headline font-semibold text-on-surface tracking-tight uppercase">Security Systems</h2>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8 flex-grow">Comprehensive border monitoring and persistent aerial surveillance networks. Integrating multi-spectral sensors and AI-driven anomaly detection for impenetrable perimeter defense.</p>
+<a class="inline-flex items-center gap-2 text-primary font-label text-sm uppercase tracking-widest hover:text-tertiary transition-colors w-max group/link mt-auto" href="#">
+                        Learn More 
+                        <span class="material-symbols-outlined text-lg transform group-hover/link:translate-x-1 transition-transform" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</a>
+</div>
+<div class="h-1 w-full bg-surface-container group-hover:bg-tertiary transition-colors duration-500"></div>
+</article>
+<!-- Service 3: Cybersecurity -->
+<article class="bg-surface-container-low group hover:bg-surface-container-high transition-colors duration-500 relative overflow-hidden flex flex-col h-full ring-1 ring-outline-variant/15 mt-8 md:mt-0">
+<div class="absolute inset-0 grid-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+<div class="absolute top-0 right-0 p-4 opacity-50 text-xs font-mono text-on-surface-variant z-10">SRV-03 // CYB_INT</div>
+<div class="h-64 relative bg-surface-container-lowest overflow-hidden border-b border-surface-container">
+<img alt="Matrix style code on a screen" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105 opacity-80 mix-blend-luminosity" data-alt="abstract digital code cascading on black screen, cyber warfare aesthetic, cool blue and green tones, sharp focus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCViZ5qM-Dbp5zCuw3dDuc9sA4AWqyQjIdDgTqvKcOEOXUzWtot8pV7HrF2Lovlp50nKs_hxFgGhVM9766z04ybclcDJj7ty1DSGI8WaiWwKE0zIF-aF8Qhuqb-zEko7n4CKZ_pRDFkU3us8m8H9pBNyZ7ARjZVJODFWc53mxi_2E4N9J97f6dTPnfUgRRWg3iP6j-PMbltu4qjCfQvHklUNmb3SrWDn9oZ5M_2evVbswBJc4xyezFK01lVacu8DC172OUTKvtEkAM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent"></div>
+</div>
+<div class="p-8 lg:p-10 flex-grow flex flex-col relative z-20">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 bg-surface-container-highest flex items-center justify-center ring-1 ring-tertiary/30">
+<span class="material-symbols-outlined text-tertiary text-2xl" style="font-variation-settings: 'FILL' 0;">security</span>
+</div>
+<h2 class="text-2xl font-headline font-semibold text-on-surface tracking-tight uppercase">Cybersecurity &amp; Intelligence</h2>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8 flex-grow">Hardened protection for strategic digital assets. Offensive and defensive cyber operations, threat hunting, and encrypted communications infrastructure designed to withstand state-sponsored attacks.</p>
+<a class="inline-flex items-center gap-2 text-primary font-label text-sm uppercase tracking-widest hover:text-tertiary transition-colors w-max group/link mt-auto" href="#">
+                        Learn More 
+                        <span class="material-symbols-outlined text-lg transform group-hover/link:translate-x-1 transition-transform" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</a>
+</div>
+<div class="h-1 w-full bg-surface-container group-hover:bg-tertiary transition-colors duration-500"></div>
+</article>
+<!-- Service 4: Training -->
+<article class="bg-surface-container-low group hover:bg-surface-container-high transition-colors duration-500 relative overflow-hidden flex flex-col h-full ring-1 ring-outline-variant/15 mt-8 md:mt-0">
+<div class="absolute inset-0 grid-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+<div class="absolute top-0 right-0 p-4 opacity-50 text-xs font-mono text-on-surface-variant z-10">SRV-04 // STR_TRN</div>
+<div class="h-64 relative bg-surface-container-lowest overflow-hidden border-b border-surface-container">
+<img alt="Military personnel looking at a tactical map" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105 opacity-80 mix-blend-luminosity" data-alt="silhouette of military personnel reviewing glowing tactical holographic map in dark command center, dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBI4lxysW_srFUa6hCWWqO2V7aGIHpgvq8AitWYkB55PBgcF3ohRnWZie9tn4qMa-QrBqBdS0N3h1YRJDLyxClkLsHM-6EYucm09xEeubJIixISm6Nra39FwxSvbuqQzWAD7LOsvmxFkBTXdJ8l9y_HHYQ1Ku1Fw1-hTZJStUUlZwOzzUYBsHU6qA9xEhSFKcSame_AxrZpgkZ8j6PrBKelfB9_0-Hnb8yJB7QvBxjIDxEHoYc3BBMAhfuaUOzrrD0T80hgTI_GDgQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent"></div>
+</div>
+<div class="p-8 lg:p-10 flex-grow flex flex-col relative z-20">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 bg-surface-container-highest flex items-center justify-center ring-1 ring-tertiary/30">
+<span class="material-symbols-outlined text-tertiary text-2xl" style="font-variation-settings: 'FILL' 0;">strategy</span>
+</div>
+<h2 class="text-2xl font-headline font-semibold text-on-surface tracking-tight uppercase">Training &amp; Consulting</h2>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8 flex-grow">Elite battlefield strategy and advanced system operation training. Equipping personnel with the tactical acumen required to leverage next-generation defense hardware effectively in combat scenarios.</p>
+<a class="inline-flex items-center gap-2 text-primary font-label text-sm uppercase tracking-widest hover:text-tertiary transition-colors w-max group/link mt-auto" href="#">
+                        Learn More 
+                        <span class="material-symbols-outlined text-lg transform group-hover/link:translate-x-1 transition-transform" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</a>
+</div>
+<div class="h-1 w-full bg-surface-container group-hover:bg-tertiary transition-colors duration-500"></div>
+</article>
+</div>
+<!-- Ambient Data Overlay -->
+<div class="fixed bottom-8 right-8 pointer-events-none opacity-30 flex flex-col items-end gap-1 font-mono text-[10px] text-primary">
+<div>SYS.STATUS: ONLINE</div>
+<div>NET.SEC: VERIFIED</div>
+<div>OP.MODE: TACTICAL</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[#191c1f] text-[#afc8f0] font-['Inter'] text-sm tracking-widest uppercase rounded-none w-full border-t border-[#43474e]/15 relative z-50">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-12 py-16 w-full max-w-[1600px] mx-auto">
+<div class="flex flex-col gap-4">
+<div class="text-xl font-bold text-[#e1e2e7] font-headline">SILVER WINGS DEFENCE</div>
+<div class="text-[#e1e2e7]/60 mt-4">© 2024 SILVER WINGS DEFENCE. TACTICAL PRECISION SECURED.</div>
+</div>
+<div class="flex flex-col md:items-end gap-3">
+<a class="text-[#e1e2e7]/60 hover:text-[#eac349] transition-colors" href="#">Privacy Policy</a>
+<a class="text-[#e1e2e7]/60 hover:text-[#eac349] transition-colors" href="#">Terms of Service</a>
+<a class="text-[#e1e2e7]/60 hover:text-[#eac349] transition-colors" href="#">Careers</a>
+<a class="text-[#e1e2e7]/60 hover:text-[#eac349] transition-colors" href="#">Download Brochures</a>
+<a class="text-[#e1e2e7]/60 hover:text-[#eac349] transition-colors" href="#">Partner Portal</a>
+</div>
+</div>
+</footer>
+</body></html>

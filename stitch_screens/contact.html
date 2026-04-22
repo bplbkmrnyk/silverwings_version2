@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact - Silver Wings Defence</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800;900&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#111417",
+                        "on-surface-variant": "#c4c6cf",
+                        "inverse-surface": "#e1e2e7",
+                        "on-error": "#690005",
+                        "primary-container": "#001f3f",
+                        "on-secondary": "#2f3131",
+                        "on-error-container": "#ffdad6",
+                        "on-surface": "#e1e2e7",
+                        "primary-fixed": "#d4e3ff",
+                        "surface-bright": "#37393d",
+                        "primary-fixed-dim": "#afc8f0",
+                        "tertiary-fixed": "#ffe088",
+                        "secondary": "#c6c6c6",
+                        "on-primary-fixed": "#001c3a",
+                        "primary": "#afc8f0",
+                        "surface-container": "#1d2023",
+                        "on-secondary-container": "#b8b8b8",
+                        "on-tertiary-fixed": "#241a00",
+                        "tertiary-container": "#cca830",
+                        "outline": "#8e9198",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "surface-container-low": "#191c1f",
+                        "on-primary-fixed-variant": "#2f486a",
+                        "outline-variant": "#43474e",
+                        "secondary-fixed": "#e3e2e2",
+                        "on-secondary-fixed-variant": "#464747",
+                        "surface-container-high": "#282a2e",
+                        "on-primary-container": "#6f88ad",
+                        "error-container": "#93000a",
+                        "inverse-primary": "#476083",
+                        "on-primary": "#163152",
+                        "surface-container-lowest": "#0c0e12",
+                        "tertiary": "#eac349",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "inverse-on-surface": "#2e3134",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "on-tertiary-container": "#4f3e00",
+                        "surface": "#111417",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "on-background": "#e1e2e7",
+                        "surface-dim": "#111417",
+                        "error": "#ffb4ab",
+                        "secondary-container": "#484949",
+                        "surface-tint": "#afc8f0",
+                        "surface-container-highest": "#323539",
+                        "on-tertiary": "#3c2f00",
+                        "surface-variant": "#323539"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "0px",
+                        "md": "0px",
+                        "sm": "0px"
+                    },
+                    "spacing": {},
+                    "fontFamily": {
+                        "headline": ["Space Grotesk", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background-color: rgba(50, 53, 57, 0.6);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        .text-gradient-primary {
+            background: linear-gradient(45deg, #afc8f0, #6f88ad);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-gradient-primary {
+            background: linear-gradient(45deg, #afc8f0, #6f88ad);
+        }
+        .grid-overlay {
+            background-image: linear-gradient(to right, rgba(225, 226, 231, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(225, 226, 231, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .ambient-shadow {
+            box-shadow: 0 20px 40px rgba(17, 20, 23, 0.4);
+        }
+        /* Custom Input Styling */
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            box-shadow: none;
+            border-bottom: 1px solid #eac349;
+            background-color: rgba(175, 200, 240, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased selection:bg-tertiary selection:text-on-tertiary min-h-screen flex flex-col">
+<!-- Navigation -->
+<nav class="bg-[#111417]/90 backdrop-blur-md text-[#afc8f0] font-['Space_Grotesk'] tracking-tight uppercase fixed top-0 w-full z-50 rounded-none shadow-[0_20px_40px_rgba(0,0,0,0.4)] border-b border-[#191c1f]">
+<div class="flex justify-between items-center px-10 py-6 w-full max-w-full">
+<div class="text-2xl font-black tracking-tighter text-[#afc8f0]">
+                SILVER WINGS DEFENCE
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#e1e2e7] font-medium hover:text-[#afc8f0] hover:bg-[#323539] transition-all duration-300 px-3 py-1" href="#">Home</a>
+<a class="text-[#e1e2e7] font-medium hover:text-[#afc8f0] hover:bg-[#323539] transition-all duration-300 px-3 py-1" href="#">About</a>
+<a class="text-[#e1e2e7] font-medium hover:text-[#afc8f0] hover:bg-[#323539] transition-all duration-300 px-3 py-1" href="#">Services</a>
+<a class="text-[#e1e2e7] font-medium hover:text-[#afc8f0] hover:bg-[#323539] transition-all duration-300 px-3 py-1" href="#">Products</a>
+<a class="text-[#e1e2e7] font-medium hover:text-[#afc8f0] hover:bg-[#323539] transition-all duration-300 px-3 py-1" href="#">Innovation</a>
+<a class="text-[#eac349] font-bold underline underline-offset-8 decoration-2 px-3 py-1" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden lg:flex items-center gap-2 bg-gradient-primary text-on-primary font-bold uppercase px-6 py-2 hover:opacity-90 transition-opacity">
+                    CLIENT LOGIN
+                    <span class="material-symbols-outlined text-sm">shield_locked</span>
+</button>
+<button class="md:hidden text-on-surface hover:text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-32 pb-24 px-6 md:px-12 lg:px-24">
+<!-- Header -->
+<div class="mb-16 max-w-4xl">
+<h5 class="text-tertiary font-label text-sm tracking-widest uppercase mb-4">Secure Communications Protocol</h5>
+<h1 class="text-5xl md:text-7xl font-headline font-bold tracking-tight text-on-surface mb-6 uppercase">Establish Command</h1>
+<p class="text-lg text-on-surface-variant font-body max-w-2xl leading-relaxed">
+                Initiate encrypted correspondence. Our global network of defense specialists stands ready to analyze, strategize, and deploy solutions tailored to your operational requirements.
+            </p>
+</div>
+<!-- Bento Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
+<!-- Form Section (Col 1-7) -->
+<div class="lg:col-span-7 bg-surface-container-high grid-overlay p-8 md:p-12 relative overflow-hidden group">
+<div class="absolute top-4 right-4 text-xs font-label text-on-surface-variant/40 uppercase tracking-widest">
+                    FRM-09A // INIT
+                </div>
+<form class="space-y-8 relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- First Name -->
+<div class="space-y-2">
+<label class="block text-xs font-label text-on-surface-variant uppercase tracking-widest">Operative Name</label>
+<input class="w-full bg-surface-container-highest border-0 border-b border-outline-variant text-on-surface px-4 py-3 font-body text-sm transition-all focus:border-tertiary focus:ring-0" placeholder="ENTER DESIGNATION" type="text"/>
+</div>
+<!-- Last Name -->
+<div class="space-y-2">
+<label class="block text-xs font-label text-on-surface-variant uppercase tracking-widest">Sur/Code Name</label>
+<input class="w-full bg-surface-container-highest border-0 border-b border-outline-variant text-on-surface px-4 py-3 font-body text-sm transition-all focus:border-tertiary focus:ring-0" placeholder="ENTER CLEARANCE ID" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Organization -->
+<div class="space-y-2">
+<label class="block text-xs font-label text-on-surface-variant uppercase tracking-widest">Organization/Agency</label>
+<input class="w-full bg-surface-container-highest border-0 border-b border-outline-variant text-on-surface px-4 py-3 font-body text-sm transition-all focus:border-tertiary focus:ring-0" placeholder="ENTER AFFILIATION" type="text"/>
+</div>
+<!-- Clearance -->
+<div class="space-y-2">
+<label class="block text-xs font-label text-on-surface-variant uppercase tracking-widest">Security Clearance (Opt)</label>
+<select class="w-full bg-surface-container-highest border-0 border-b border-outline-variant text-on-surface px-4 py-3 font-body text-sm transition-all focus:border-tertiary focus:ring-0 appearance-none">
+<option class="bg-surface-container text-on-surface-variant" value="">SELECT LEVEL</option>
+<option class="bg-surface-container text-on-surface" value="unclassified">UNCLASSIFIED</option>
+<option class="bg-surface-container text-on-surface" value="confidential">CONFIDENTIAL</option>
+<option class="bg-surface-container text-on-surface" value="secret">SECRET</option>
+<option class="bg-surface-container text-tertiary" value="top_secret">TOP SECRET</option>
+</select>
+</div>
+</div>
+<!-- Message -->
+<div class="space-y-2">
+<label class="block text-xs font-label text-on-surface-variant uppercase tracking-widest">Encrypted Payload</label>
+<textarea class="w-full bg-surface-container-highest border-0 border-b border-outline-variant text-on-surface px-4 py-3 font-body text-sm transition-all focus:border-tertiary focus:ring-0 resize-none" placeholder="ENTER TRANSMISSION DATA..." rows="5"></textarea>
+</div>
+<!-- Actions -->
+<div class="flex items-center justify-between pt-4">
+<div class="flex items-center gap-2 text-xs font-label text-on-surface-variant uppercase">
+<span class="w-2 h-2 bg-[#4B5320]"></span>
+                            CHANNEL SECURE
+                        </div>
+<button class="bg-gradient-primary text-on-primary font-headline font-bold uppercase px-8 py-3 hover:opacity-90 transition-opacity flex items-center gap-2" type="button">
+                            TRANSMIT
+                            <span class="material-symbols-outlined text-sm">send</span>
+</button>
+</div>
+</form>
+</div>
+<!-- Side Info (Col 8-12) -->
+<div class="lg:col-span-5 flex flex-col gap-6 lg:gap-8">
+<!-- Location Module -->
+<div class="bg-surface-container-low p-8 relative flex-grow">
+<div class="absolute top-4 right-4 text-xs font-label text-on-surface-variant/40 uppercase tracking-widest">
+                        LOC // HQ
+                    </div>
+<h3 class="text-2xl font-headline font-bold text-on-surface uppercase mb-6">Global Command</h3>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1">location_on</span>
+<div>
+<p class="text-sm font-label text-on-surface-variant uppercase tracking-widest mb-1">Primary Nexus</p>
+<p class="text-on-surface font-body">100 Tactical Way<br/>Sector 7G, Pentagon City<br/>VA 22202, USA</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1">call</span>
+<div>
+<p class="text-sm font-label text-on-surface-variant uppercase tracking-widest mb-1">Direct Line</p>
+<p class="text-on-surface font-body">+1 (800) DEF-SYNC</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1">mail</span>
+<div>
+<p class="text-sm font-label text-on-surface-variant uppercase tracking-widest mb-1">Encrypted Comm</p>
+<p class="text-on-surface font-body">nexus@silverwings.defense</p>
+</div>
+</div>
+</div>
+<!-- Map Preview -->
+<div class="mt-8 h-48 bg-surface-container-highest relative overflow-hidden border border-outline-variant/15">
+<img alt="Dark themed satellite map view of Washington DC area" class="w-full h-full object-cover opacity-60 grayscale mix-blend-luminosity" data-alt="Dark aesthetic satellite map interface showing urban grid with subtle targeting crosshairs and tactical overlays" data-location="Washington DC" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgvwDJC-ouIBzYzmpnvlu2esaJEpN2Rt0dYap5fctrtDw0DjDouMDiODjO2prsBQ59ygxY5_bXcsx48XI29AA8kTLMeofRzRBll52YY9svted3DfH11Joxi84SR_jlN2wrvV0ufQRQdDE30n5XFEP-ABwbKmnP9-Q8dVHHO4OxLuyzxrYPRcSS6olzEKPM-PJsVpc19GHOikXmwN7CnR6jn3aXZ_Vs60Mx_6BdfY2wQrXwmAQRY9U5xaiD-xG4qoeizTOKOT2p58g"/>
+<div class="absolute inset-0 bg-primary/5 mix-blend-overlay"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-4 h-4 rounded-none border border-tertiary flex items-center justify-center relative">
+<div class="w-1 h-1 bg-tertiary"></div>
+<div class="absolute -top-1 -bottom-1 left-1/2 w-px bg-tertiary/50"></div>
+<div class="absolute -left-1 -right-1 top-1/2 h-px bg-tertiary/50"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Secure Portal Preview -->
+<div class="bg-surface-container-high grid-overlay p-8 border border-tertiary/20 relative group">
+<div class="absolute top-4 right-4 flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-[#4B5320] animate-pulse"></span>
+<span class="text-xs font-label text-[#4B5320] uppercase tracking-widest">ACTIVE</span>
+</div>
+<span class="material-symbols-outlined text-3xl text-tertiary mb-4 block">vpn_key</span>
+<h3 class="text-xl font-headline font-bold text-on-surface uppercase mb-2">Partner Portal</h3>
+<p class="text-sm text-on-surface-variant font-body mb-6">Access classified documentation, supply chain telemetry, and active deployment status.</p>
+<button class="w-full border border-tertiary text-tertiary font-headline font-bold uppercase px-6 py-3 hover:bg-tertiary/10 transition-colors flex items-center justify-center gap-2">
+                        AUTHORIZE ACCESS
+                        <span class="material-symbols-outlined text-sm">login</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[#191c1f] rounded-none w-full border-t border-[#43474e]/15">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-12 py-16 w-full max-w-7xl mx-auto">
+<div>
+<div class="text-xl font-bold text-[#e1e2e7] mb-4 font-['Space_Grotesk'] tracking-tighter">
+                    SILVER WINGS DEFENCE
+                </div>
+<p class="font-['Inter'] text-sm tracking-widest uppercase text-[#afc8f0]">
+                    © 2024 SILVER WINGS DEFENCE. TACTICAL PRECISION SECURED.
+                </p>
+</div>
+<div class="flex flex-wrap md:justify-end gap-x-8 gap-y-4">
+<a class="font-['Inter'] text-sm tracking-widest uppercase text-[#e1e2e7]/60 hover:text-[#eac349] transition-colors" href="#">Privacy Policy</a>
+<a class="font-['Inter'] text-sm tracking-widest uppercase text-[#e1e2e7]/60 hover:text-[#eac349] transition-colors" href="#">Terms of Service</a>
+<a class="font-['Inter'] text-sm tracking-widest uppercase text-[#e1e2e7]/60 hover:text-[#eac349] transition-colors" href="#">Careers</a>
+<a class="font-['Inter'] text-sm tracking-widest uppercase text-[#e1e2e7]/60 hover:text-[#eac349] transition-colors" href="#">Download Brochures</a>
+<a class="font-['Inter'] text-sm tracking-widest uppercase text-[#eac349] hover:text-[#eac349] transition-colors" href="#">Partner Portal</a>
+</div>
+</div>
+</footer>
+</body></html>
