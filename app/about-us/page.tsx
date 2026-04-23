@@ -1,34 +1,86 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 export default function AboutUs() {
   return (
-    <main className="pt-32 pb-24 px-6 md:px-12 lg:px-24 max-w-[1920px] mx-auto flex flex-col gap-32">
-      {/* Hero Section: Securing the Future */}
-      <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
-        <div className="lg:col-span-7 flex flex-col gap-8 z-10">
-          <span className="font-label text-sm uppercase tracking-[0.2em] text-tertiary">Initiative Overview</span>
-          <h1 className="font-headline text-5xl md:text-7xl font-bold tracking-tight text-on-surface leading-tight">
-            SECURING THE FUTURE<br />
-            <span className="text-primary-fixed-dim">THROUGH AERIAL SUPERIORITY.</span>
-          </h1>
-          <p className="font-body text-on-surface-variant text-lg max-w-2xl leading-relaxed">
-            Silver Wings Defence was forged in the crucible of modern geopolitical complexity. We engineer autonomous Unmanned Aerial Vehicles (UAVs) and advanced surveillance matrices that provide uncompromised situational awareness for mission-critical operations.
-          </p>
-          <div className="flex gap-4 mt-4">
-            <div className="bg-surface-container-high px-6 py-4 flex flex-col gap-1 border-l-2 border-tertiary">
-              <span className="font-headline text-3xl font-bold text-on-surface">2010</span>
-              <span className="font-label text-xs uppercase text-on-surface-variant tracking-wider">Foundation Year</span>
-            </div>
-            <div className="bg-surface-container-high px-6 py-4 flex flex-col gap-1 border-l-2 border-primary">
-              <span className="font-headline text-3xl font-bold text-on-surface">Mk-VII</span>
-              <span className="font-label text-xs uppercase text-on-surface-variant tracking-wider">Current Gen Platform</span>
-            </div>
+    <main className="pt-32 pb-24 px-6 md:px-12 lg:px-24 max-w-[1920px] mx-auto flex flex-col gap-32 overflow-hidden">
+      {/* Hero Section: Origins & Philosophy */}
+      <section className="relative min-h-[70vh] flex items-center py-20 mt-4 md:mt-10">
+        <div className="w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-16 relative z-10">
+          
+          {/* Left: Content Box */}
+          <div className="flex-1 flex flex-col gap-8 bg-surface-container-low/80 backdrop-blur-xl p-10 md:p-16 border-l-4 border-primary shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative">
+            {/* Corner accents */}
+            <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-primary/40"></div>
+            <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-primary/40"></div>
+
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="flex items-center gap-4"
+            >
+              <div className="h-px w-12 bg-tertiary"></div>
+              <span className="font-mono text-xs uppercase tracking-[0.2em] text-tertiary">Our Origin Story</span>
+            </motion.div>
+            
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="font-headline text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-white leading-[1.1] uppercase"
+            >
+              Architects <br />
+              <span className="text-primary">of the Sky.</span>
+            </motion.h1>
+            
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="font-body text-on-surface-variant text-lg leading-relaxed"
+            >
+              We don't just build hardware; we engineer sovereign deterrence architectures. From our elite origins in a small research lab to a global pillar in defense, we exist to redefine autonomous flight.
+            </motion.p>
+            
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="grid grid-cols-2 gap-6 mt-4"
+            >
+              <div className="bg-surface-container-highest p-6 border-t border-outline-variant/10 flex flex-col items-center text-center">
+                <span className="font-headline text-4xl font-bold text-white mb-2">2010</span>
+                <span className="font-mono text-[10px] uppercase text-tertiary tracking-widest">Year Founded</span>
+              </div>
+              <div className="bg-surface-container-highest p-6 border-t border-outline-variant/10 flex flex-col items-center text-center">
+                <span className="font-headline text-4xl font-bold text-white mb-2">40+</span>
+                <span className="font-mono text-[10px] uppercase text-primary tracking-widest">Global Patents</span>
+              </div>
+            </motion.div>
           </div>
-        </div>
-        <div className="lg:col-span-5 relative h-[500px] w-full bg-surface-container-low overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
-          <div className="absolute inset-0 grid-overlay z-10 opacity-20"></div>
-          <img alt="Tactical drone silhouette" className="absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-60" data-alt="High-contrast silhouette of an advanced military drone against a dark, cloudy sky, cold blue cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkAuqBBI9XR1dXIBcybzR2fytTQYE-Iv4bqYJLDUgcrdqDnNixgHzHvZZNZ7IoGHYpEVt0oXEX4BmPySwidDia0lxUgUNaw_Vy635cM2AE9_cuMVXWFW8wSHRoTe__lhtEtUL7lwJs0c6syZVQw0BcqdNG_OKzuJPkiCVXYJsr-HsWzhwcjSW6iaimit5ifDRCrrc-f58ah8MP1EzRF-qGXHUZoqeEIiYQtT46qlM1-stA2ww5p0Ru8_FzaUJ4CjpOFkg9lCp5V70" />
-          <div className="absolute bottom-6 left-6 z-20 flex flex-col gap-1">
-            <span className="font-headline text-sm text-tertiary tracking-widest uppercase">Asset Confirmed</span>
-            <span className="font-label text-xs text-on-surface-variant font-mono">LAT: 45.4215 N | LON: 75.6972 W</span>
+
+          {/* Right: Drone Display */}
+          <div className="flex-1 relative h-[400px] md:h-[600px] w-full flex items-center justify-center mt-12 lg:mt-0">
+            {/* Circular rings behind drone */}
+            <div className="absolute inset-0 flex items-center justify-center opacity-40">
+               <div className="w-[300px] md:w-[500px] h-[300px] md:h-[500px] border border-primary/30 rounded-full animate-[spin_40s_linear_infinite]"></div>
+               <div className="absolute w-[200px] md:w-[350px] h-[200px] md:h-[350px] border border-dashed border-tertiary/30 rounded-full animate-[spin_25s_linear_infinite_reverse]"></div>
+            </div>
+
+            <motion.div 
+              className="relative z-10 w-full flex justify-center"
+              initial={{ x: 100, y: 50, opacity: 0, scale: 0.8 }}
+              animate={{ x: 0, y: 0, opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <img 
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBT7fkLl2-xe0clYXsvmZP66KeTGsIhUxTBls4X2NYOC0fG00Atdj5rmuDGIgdJQozI1LwTyekkZ9MBpqTIFx7F5i-fPMCHYTd2wYPPLf-dX9k9_hyG-YCfq-kbWc4tiPFKFPHLBvabUSXHLBzS4pi1nxpCvmHMYZbuTfOQ3nbLPTVKB93ldy74InJPjIYJ1yTPS6yEnQrbGOURmKpb5oByeXQ6Zpi_QpbBzaLaXLiaR1Tgfjkj9PCwvxyLXBpEGN7FBfYYLjno7qk" 
+                alt="Flying Drone"
+                className="w-[90%] max-w-[600px] h-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)] filter brightness-125"
+              />
+            </motion.div>
           </div>
         </div>
       </section>

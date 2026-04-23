@@ -95,9 +95,9 @@ export default function Home() {
         {/* Hero content fades + scales out as you scroll away */}
         <motion.div
           style={{ opacity: heroOpacity }}
-          className="relative z-10 w-full max-w-7xl mx-auto px-10 grid grid-cols-1 md:grid-cols-2 gap-12"
+          className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 pt-20 md:pt-0"
         >
-          <div className="flex flex-col gap-8 justify-center">
+          <div className="flex flex-col gap-6 md:gap-8 justify-center">
             <div className="flex flex-col gap-2">
               <motion.span
                 initial={{ opacity: 0, x: -30 }}
@@ -107,7 +107,7 @@ export default function Home() {
               >
                 Classified Systems / Tier 1
               </motion.span>
-              <h1 className="font-headline text-6xl md:text-8xl font-extrabold text-on-surface leading-none tracking-[-0.02em] uppercase">
+              <h1 className="font-headline text-5xl sm:text-6xl md:text-8xl font-extrabold text-on-surface leading-none tracking-[-0.02em] uppercase">
                 <motion.span
                   initial={{ opacity: 0, y: 80 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -138,7 +138,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.8, ease: [0.16, 1, 0.3, 1] as const }}
-              className="text-on-surface-variant text-lg md:text-xl font-body max-w-lg leading-relaxed border-l-2 border-outline-variant pl-6"
+              className="text-on-surface-variant text-base md:text-xl font-body max-w-lg leading-relaxed border-l-2 border-outline-variant pl-4 md:pl-6"
             >
               Next-generation aerospace defense solutions engineered for zero-tolerance operational environments.
             </motion.p>
@@ -146,13 +146,13 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 1, ease: [0.16, 1, 0.3, 1] as const }}
-              className="flex flex-col sm:flex-row gap-6 mt-4"
+              className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-4"
             >
-              <button className="bg-gradient-to-tr from-primary to-on-primary-container text-on-primary font-headline font-bold uppercase tracking-widest px-8 py-4 hover:brightness-110 transition-all flex items-center justify-between group">
+              <button className="bg-gradient-to-tr from-primary to-on-primary-container text-on-primary font-headline font-bold uppercase tracking-widest px-6 md:px-8 py-4 hover:brightness-110 transition-all flex items-center justify-between group">
                 <span>Request Proposal</span>
                 <span className="material-symbols-outlined ml-4 group-hover:translate-x-1 transition-transform">arrow_forward</span>
               </button>
-              <button className="border border-tertiary text-tertiary font-headline font-bold uppercase tracking-widest px-8 py-4 hover:bg-tertiary/10 transition-colors flex items-center justify-between">
+              <button className="border border-tertiary text-tertiary font-headline font-bold uppercase tracking-widest px-6 md:px-8 py-4 hover:bg-tertiary/10 transition-colors flex items-center justify-between">
                 <span>Explore Solutions</span>
                 <span className="material-symbols-outlined ml-4">radar</span>
               </button>
@@ -189,8 +189,8 @@ export default function Home() {
       </section>
 
       {/* ─── Sovereign Guard — Sticky Parallax ─── */}
-      <section className="py-24 bg-surface-container-low relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-10 grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+      <section className="py-16 md:py-24 bg-surface-container-low relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
           {/* Text column */}
           <div className="md:col-span-5 flex flex-col justify-between">
             <div>
@@ -247,7 +247,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-grid-pattern opacity-20 pointer-events-none" />
 
         {/* Section header (normal scroll) */}
-        <div className="max-w-7xl mx-auto px-10 pt-24 pb-12 flex flex-col md:flex-row justify-between items-end gap-8">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 pt-16 md:pt-24 pb-12 flex flex-col md:flex-row justify-between md:items-end gap-6 md:gap-8">
           <Reveal>
             <span className="text-tertiary font-label text-sm tracking-[0.2em] uppercase font-bold block mb-4">Tactical Portfolio</span>
             <h2 className="font-headline text-4xl md:text-5xl font-bold tracking-tight text-on-surface uppercase">
@@ -342,24 +342,24 @@ export default function Home() {
 
       {/* ─── Partner Logos ─── */}
       <section className="py-12 bg-surface-container-lowest border-y border-outline-variant/20">
-        <Reveal direction="none" className="max-w-7xl mx-auto px-10 flex flex-col md:flex-row items-center justify-between gap-8 opacity-50 grayscale">
+        <Reveal direction="none" className="max-w-7xl mx-auto px-6 md:px-10 flex flex-col md:flex-row items-center justify-between gap-8 opacity-50 grayscale">
           <span className="text-xs font-mono tracking-widest uppercase text-on-surface-variant whitespace-nowrap">Authorized Supplier To:</span>
-          <div className="flex w-full justify-between items-center gap-8 overflow-hidden">
-            <h4 className="font-headline font-bold text-xl tracking-tighter uppercase">Aegis Defense</h4>
-            <h4 className="font-headline font-bold text-xl tracking-tighter uppercase">StratCom</h4>
-            <h4 className="font-headline font-bold text-xl tracking-tighter uppercase">Titan Dynamics</h4>
-            <h4 className="font-headline font-bold text-xl tracking-tighter uppercase">Vanguard Intl</h4>
-            <h4 className="font-headline font-bold text-xl tracking-tighter uppercase">Apex Systems</h4>
+          <div className="flex w-full flex-wrap justify-center md:justify-between items-center gap-6 md:gap-8 overflow-hidden">
+            <h4 className="font-headline font-bold text-lg md:text-xl tracking-tighter uppercase">Aegis Defense</h4>
+            <h4 className="font-headline font-bold text-lg md:text-xl tracking-tighter uppercase">StratCom</h4>
+            <h4 className="font-headline font-bold text-lg md:text-xl tracking-tighter uppercase">Titan Dynamics</h4>
+            <h4 className="font-headline font-bold text-lg md:text-xl tracking-tighter uppercase">Vanguard Intl</h4>
+            <h4 className="font-headline font-bold text-lg md:text-xl tracking-tighter uppercase">Apex Systems</h4>
           </div>
         </Reveal>
       </section>
 
       {/* ─── CTA Section ─── */}
-      <section className="py-24 bg-surface-container-low relative">
+      <section className="py-16 md:py-24 bg-surface-container-low relative">
         <div className="absolute inset-0 bg-grid-pattern opacity-10" />
-        <div className="max-w-4xl mx-auto px-10 text-center relative z-10">
+        <div className="max-w-4xl mx-auto px-6 md:px-10 text-center relative z-10">
           <Reveal>
-            <span className="material-symbols-outlined text-tertiary text-5xl mb-6 block">library_books</span>
+            <span className="material-symbols-outlined text-tertiary text-4xl md:text-5xl mb-6 block">library_books</span>
             <h2 className="font-headline text-3xl md:text-5xl font-bold tracking-tight text-on-surface uppercase mb-6">
               <WordReveal text="Access Technical Specifications" />
             </h2>
