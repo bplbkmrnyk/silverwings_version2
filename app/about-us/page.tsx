@@ -6,16 +6,25 @@ export default function AboutUs() {
   return (
     <main className="pt-32 pb-24 px-6 md:px-12 lg:px-24 max-w-[1920px] mx-auto flex flex-col gap-32 overflow-hidden">
       {/* Hero Section: Origins & Philosophy */}
-      <section className="relative min-h-[70vh] flex items-center py-20 mt-4 md:mt-10">
+      <section className="relative min-h-[70vh] flex items-center py-20 mt-4 md:mt-10 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/images/backgrounds/about_bg.png"
+            alt="Command Center"
+            className="w-full h-full object-cover opacity-20 mix-blend-luminosity"
+          />
+          <div className="absolute inset-0 bg-linear-to-r from-background via-background/80 to-transparent" />
+        </div>
         <div className="w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-16 relative z-10">
-          
+
           {/* Left: Content Box */}
           <div className="flex-1 flex flex-col gap-8 bg-surface-container-low/80 backdrop-blur-xl p-10 md:p-16 border-l-4 border-primary shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative">
             {/* Corner accents */}
             <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-primary/40"></div>
             <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-primary/40"></div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
@@ -24,8 +33,8 @@ export default function AboutUs() {
               <div className="h-px w-12 bg-tertiary"></div>
               <span className="font-mono text-xs uppercase tracking-[0.2em] text-tertiary">Our Origin Story</span>
             </motion.div>
-            
-            <motion.h1 
+
+            <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -34,17 +43,17 @@ export default function AboutUs() {
               Architects <br />
               <span className="text-primary">of the Sky.</span>
             </motion.h1>
-            
-            <motion.p 
+
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
               className="font-body text-on-surface-variant text-lg leading-relaxed"
             >
-              We don't just build hardware; we engineer sovereign deterrence architectures. From our elite origins in a small research lab to a global pillar in defense, we exist to redefine autonomous flight.
+              We don&apos;t just build hardware; we engineer sovereign deterrence architectures. From our elite origins in a small research lab to a global pillar in defense, we exist to redefine autonomous flight.
             </motion.p>
-            
-            <motion.div 
+
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.4 }}
@@ -65,18 +74,18 @@ export default function AboutUs() {
           <div className="flex-1 relative h-[400px] md:h-[600px] w-full flex items-center justify-center mt-12 lg:mt-0">
             {/* Circular rings behind drone */}
             <div className="absolute inset-0 flex items-center justify-center opacity-40">
-               <div className="w-[300px] md:w-[500px] h-[300px] md:h-[500px] border border-primary/30 rounded-full animate-[spin_40s_linear_infinite]"></div>
-               <div className="absolute w-[200px] md:w-[350px] h-[200px] md:h-[350px] border border-dashed border-tertiary/30 rounded-full animate-[spin_25s_linear_infinite_reverse]"></div>
+              <div className="w-[300px] md:w-[500px] h-[300px] md:h-[500px] border border-primary/30 rounded-full animate-[spin_40s_linear_infinite]"></div>
+              <div className="absolute w-[200px] md:w-[350px] h-[200px] md:h-[350px] border border-dashed border-tertiary/30 rounded-full animate-[spin_25s_linear_infinite_reverse]"></div>
             </div>
 
-            <motion.div 
+            <motion.div
               className="relative z-10 w-full flex justify-center"
               initial={{ x: 100, y: 50, opacity: 0, scale: 0.8 }}
               animate={{ x: 0, y: 0, opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             >
-              <img 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBT7fkLl2-xe0clYXsvmZP66KeTGsIhUxTBls4X2NYOC0fG00Atdj5rmuDGIgdJQozI1LwTyekkZ9MBpqTIFx7F5i-fPMCHYTd2wYPPLf-dX9k9_hyG-YCfq-kbWc4tiPFKFPHLBvabUSXHLBzS4pi1nxpCvmHMYZbuTfOQ3nbLPTVKB93ldy74InJPjIYJ1yTPS6yEnQrbGOURmKpb5oByeXQ6Zpi_QpbBzaLaXLiaR1Tgfjkj9PCwvxyLXBpEGN7FBfYYLjno7qk" 
+              <img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBT7fkLl2-xe0clYXsvmZP66KeTGsIhUxTBls4X2NYOC0fG00Atdj5rmuDGIgdJQozI1LwTyekkZ9MBpqTIFx7F5i-fPMCHYTd2wYPPLf-dX9k9_hyG-YCfq-kbWc4tiPFKFPHLBvabUSXHLBzS4pi1nxpCvmHMYZbuTfOQ3nbLPTVKB93ldy74InJPjIYJ1yTPS6yEnQrbGOURmKpb5oByeXQ6Zpi_QpbBzaLaXLiaR1Tgfjkj9PCwvxyLXBpEGN7FBfYYLjno7qk"
                 alt="Flying Drone"
                 className="w-[90%] max-w-[600px] h-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)] filter brightness-125"
               />
@@ -177,7 +186,7 @@ export default function AboutUs() {
           <div className="relative h-[400px] w-full bg-surface-container-lowest shadow-[0_20px_40px_rgba(0,0,0,0.4)] p-4 flex flex-col justify-between">
             <img alt="Technology Interface" className="absolute inset-0 w-full h-full object-cover opacity-30" data-alt="Abstract macro shot of a complex circuit board with glowing blue and silver traces, conveying high-tech processing power" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyr-vunu6g6_zGpxg1tw9l1w4_KXS72fzL0O-fnZGOE0od4K3Ck1pOPMau4tzY3jFdz5HX8tWrri6z9JZgegenB2m8v84VO3r2EInerH8C3txch_G51ahizQL2CtqBX7DPsMAazywno8clvY3JFKoNa_yuku_cKE3IzHtDleK9hwgf2Dj6KSopbz4Slgmz9onKG-NVg4jk6lZGjI-yc4uryc-9pGS7SyvueTFfkTc76cJyzpgQoayyqWnxw7Z0hUaOVHTs5UmIgZw" />
             <div className="flex justify-between items-center z-10 border-b border-outline-variant/30 pb-2">
-              <span className="font-label text-xs text-on-surface-variant font-mono">SYS_STATUS: OPTIMAL</span>
+              <span className="font-mono text-xs text-on-surface-variant">SYS_STATUS: OPTIMAL</span>
               <div className="h-2 w-2 bg-military-green rounded-full shadow-[0_0_10px_#4B5320]"></div>
             </div>
             <div className="z-10 font-mono text-sm text-primary/70 leading-relaxed max-w-[80%]">

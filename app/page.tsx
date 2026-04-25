@@ -86,9 +86,9 @@ export default function Home() {
           <img
             alt="Tactical Drone"
             className="w-full h-full object-cover opacity-30 mix-blend-luminosity"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVILf8rqEoLMbS16e7N8SxWFZRXxrQhsiuXs_AgYbj5lTuVTKtoWM75RUsMDW7QKZ1b4OI0DkmIrzxwcuX15PIWl94eV4exkkywpTVGoDSdapljBrrtXxto9oeSnBLlkl6coghopAnrfbYtoN4ipqTC7sb9GRB8qS8eesMkgVuM2umwIN1e1ajeY4MW1aVlA7_hYV8wYCh-9o9X1zJ89rkhHUWRg78TL7S0RlK2aJzKUXuvNceTD-VMktfuqI3GdX9yoiM7eN8-Qw"
+            src="/images/backgrounds/home_bg.png"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-r from-background via-background/80 to-transparent" />
           <div className="absolute inset-0 bg-grid-pattern mix-blend-overlay" />
         </motion.div>
 
@@ -148,7 +148,7 @@ export default function Home() {
               transition={{ duration: 0.9, delay: 1, ease: [0.16, 1, 0.3, 1] as const }}
               className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-4"
             >
-              <button className="bg-gradient-to-tr from-primary to-on-primary-container text-on-primary font-headline font-bold uppercase tracking-widest px-6 md:px-8 py-4 hover:brightness-110 transition-all flex items-center justify-between group">
+              <button className="bg-linear-to-tr from-primary to-on-primary-container text-on-primary font-headline font-bold uppercase tracking-widest px-6 md:px-8 py-4 hover:brightness-110 transition-all flex items-center justify-between group">
                 <span>Request Proposal</span>
                 <span className="material-symbols-outlined ml-4 group-hover:translate-x-1 transition-transform">arrow_forward</span>
               </button>
@@ -164,7 +164,7 @@ export default function Home() {
             transition={{ duration: 1.1, delay: 0.7, ease: [0.16, 1, 0.3, 1] as const }}
             className="hidden md:flex justify-end items-end pb-12"
           >
-            <div className="bg-surface-container-highest/60 backdrop-blur-[24px] p-6 w-72 border-t-2 border-primary ghost-border">
+            <div className="bg-surface-container-highest/60 backdrop-blur-xl p-6 w-72 border-t-2 border-primary ghost-border">
               <div className="flex justify-between items-start mb-6">
                 <span className="material-symbols-outlined text-primary">my_location</span>
                 <span className="text-[10px] text-tertiary font-mono tracking-widest">SYS.ONL.994</span>
@@ -172,7 +172,7 @@ export default function Home() {
               <div className="space-y-4 font-mono text-xs">
                 <div className="flex justify-between border-b border-outline-variant pb-2">
                   <span className="text-on-surface-variant">AIRSPACE</span>
-                  <span className="text-[#4B5320] font-bold">SECURE</span>
+                  <span className="text-military-green font-bold">SECURE</span>
                 </div>
                 <div className="flex justify-between border-b border-outline-variant pb-2">
                   <span className="text-on-surface-variant">ASSETS</span>
@@ -212,8 +212,8 @@ export default function Home() {
               </Reveal>
             </div>
             <Reveal delay={0.35}>
-              <div className="mt-12 bg-surface-container p-6 border-l-4 border-[#4B5320]">
-                <p className="font-mono text-sm text-[#4B5320] font-bold tracking-widest uppercase mb-2">Operational Status</p>
+              <div className="mt-12 bg-surface-container p-6 border-l-4 border-military-green">
+                <p className="font-mono text-sm text-military-green font-bold tracking-widest uppercase mb-2">Operational Status</p>
                 <p className="text-on-surface text-xl font-headline tracking-tight">Systems functioning at 99.999% uptime across active deployments.</p>
               </div>
             </Reveal>
@@ -227,7 +227,7 @@ export default function Home() {
                 alt="Advanced Hardware"
                 className="absolute inset-0 w-full h-full opacity-60 mix-blend-luminosity"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-surface-container-highest via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-surface-container-highest via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end">
                 <div>
                   <span className="text-[10px] text-primary font-mono tracking-widest mb-1 block">MANUFACTURING FACILITY / SECTOR 4</span>
@@ -273,13 +273,13 @@ export default function Home() {
             </div>
             <div className="absolute inset-0 z-0">
               <img alt="UAV Systems" className="w-full h-full object-cover opacity-20 mix-blend-luminosity group-hover:opacity-40 transition-opacity duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbWQYkKdjK3Y7G0l4FGGJIAYZB_Yk-FBSNi0Ef_8DzTO4F34bsVdzdrRugk9qIugJrbSGmHHpRn5CX2osECwJtZOW-jT8vXmoXjkdFXMPY4-SZJJOoapl24QJWTirFdq0hGTtYZzlkHZnhBVXN-gI6AWfENzVbVCEJLqv5zO_SmT5ewzjt2U-qGQHqvkhq5YcXcK3yoOB9b_W_5rEVsY7rkP9oX7GnI73VoRy3ZSrTXXUCHB4XfleJGcTyxBg7HSaIjr00yO9VDN4" />
-              <div className="absolute inset-0 bg-gradient-to-t from-surface-container-highest via-surface-container-highest/80 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-surface-container-highest via-surface-container-highest/80 to-transparent" />
             </div>
             <div className="relative z-10">
               <span className="text-[10px] text-tertiary font-mono tracking-widest mb-2 block">AEROSPACE DIV.</span>
               <h3 className="text-2xl font-headline font-bold text-on-surface uppercase mb-3">Unmanned Systems</h3>
               <p className="text-sm text-on-surface-variant font-body mb-6">Autonomous aerial platforms designed for persistent ISR and precision kinetic strikes in denied airspace.</p>
-              <div className="w-full h-[1px] bg-outline-variant mb-6" />
+              <div className="w-full h-px bg-outline-variant mb-6" />
               <div className="flex justify-between items-center text-xs font-mono text-on-surface-variant">
                 <span>ENDURANCE: 48H</span>
                 <span className="material-symbols-outlined text-sm group-hover:text-primary transition-colors">arrow_forward</span>
@@ -294,13 +294,13 @@ export default function Home() {
             </div>
             <div className="absolute inset-0 z-0">
               <img alt="Surveillance" className="w-full h-full object-cover opacity-20 mix-blend-luminosity group-hover:opacity-40 transition-opacity duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW0fpMimENV0_rPlLRlGF_sXP_9L1lM383Rbqbt-TibSxmznWhCezK72IxrnXozHQ8vHEKZSPjc6F-oSbbZHt-WcEVWk_Gr31YO1EqOYANGqQdFhHWOB4Ux6dmOF3Hf_IT8SWyksxK-tZCeUfhE9RZcsIBaeWy8yTu3Z-xzkyVLgyZdbWHPosWqHl_MfhnIlwqLBrpRfZnR71wX67YVQNn2KqyIBtw4cWKQd7pwaEPnPImG4bIhDCk-GYftvewLl7h3J480CGTVCc" />
-              <div className="absolute inset-0 bg-gradient-to-t from-surface-container-highest via-surface-container-highest/80 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-surface-container-highest via-surface-container-highest/80 to-transparent" />
             </div>
             <div className="relative z-10">
               <span className="text-[10px] text-tertiary font-mono tracking-widest mb-2 block">INTELLIGENCE DIV.</span>
               <h3 className="text-2xl font-headline font-bold text-on-surface uppercase mb-3">Global Surveillance</h3>
               <p className="text-sm text-on-surface-variant font-body mb-6">Multi-spectral satellite imaging and continuous monitoring networks for actionable strategic intelligence.</p>
-              <div className="w-full h-[1px] bg-outline-variant mb-6" />
+              <div className="w-full h-px bg-outline-variant mb-6" />
               <div className="flex justify-between items-center text-xs font-mono text-on-surface-variant">
                 <span>COVERAGE: LEO</span>
                 <span className="material-symbols-outlined text-sm group-hover:text-primary transition-colors">arrow_forward</span>
@@ -315,13 +315,13 @@ export default function Home() {
             </div>
             <div className="absolute inset-0 z-0">
               <img alt="Cyber Warfare" className="w-full h-full object-cover opacity-20 mix-blend-luminosity group-hover:opacity-40 transition-opacity duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqj_gpLrV2iFNHxA96OovpNNq_upDW4Mik6ZwEDg09SWF4wfwrD6V5lMA05IaT_4EnWMgWAFURztDt5rmylctzsDtzaF-xYgYneFiFKDTPgNIGvxtoQSZcKd8cijya-vCXrcnPfBAfAjP_4JykPPJZC6zh0NeV2pAS__zLUlaqFOHVwsVQXqKa4cr89cMjwO1JU_Xo8Z2lZ6rvLnM_7A0_9wYZJkXipOVrVpWY8OSBq5C6XJ-RbsqCamImVQCvNigvKVsxJydnhxk" />
-              <div className="absolute inset-0 bg-gradient-to-t from-surface-container-highest via-surface-container-highest/80 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-surface-container-highest via-surface-container-highest/80 to-transparent" />
             </div>
             <div className="relative z-10">
               <span className="text-[10px] text-tertiary font-mono tracking-widest mb-2 block">CYBERCOM DIV.</span>
               <h3 className="text-2xl font-headline font-bold text-on-surface uppercase mb-3">Cyber Security</h3>
               <p className="text-sm text-on-surface-variant font-body mb-6">Hardened cryptographic networks and offensive cyber capabilities to protect digital infrastructure.</p>
-              <div className="w-full h-[1px] bg-outline-variant mb-6" />
+              <div className="w-full h-px bg-outline-variant mb-6" />
               <div className="flex justify-between items-center text-xs font-mono text-on-surface-variant">
                 <span>ENCRYPTION: AES-256</span>
                 <span className="material-symbols-outlined text-sm group-hover:text-primary transition-colors">arrow_forward</span>
@@ -369,7 +369,7 @@ export default function Home() {
               Review our comprehensive unclassified capabilities matrix. Understand the tactical advantage Silver Wings Defence provides across land, air, and cyber domains.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-gradient-to-tr from-primary to-on-primary-container text-on-primary font-headline font-bold uppercase tracking-widest px-8 py-4 hover:brightness-110 transition-all flex items-center justify-center gap-3">
+              <button className="bg-linear-to-tr from-primary to-on-primary-container text-on-primary font-headline font-bold uppercase tracking-widest px-8 py-4 hover:brightness-110 transition-all flex items-center justify-center gap-3">
                 <span className="material-symbols-outlined">download</span>
                 <span>Download 2024 Brochure</span>
               </button>

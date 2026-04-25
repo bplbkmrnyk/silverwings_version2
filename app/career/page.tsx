@@ -5,23 +5,23 @@ import { motion } from "framer-motion";
 export default function Career() {
   return (
     <main className="pt-32 pb-24 px-6 md:px-12 lg:px-24 max-w-[1920px] mx-auto flex flex-col gap-32 overflow-hidden">
-      
+
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex flex-col justify-center py-20 border border-outline-variant/10 overflow-hidden">
         {/* Background Image & Overlays */}
         <div className="absolute inset-0 z-0">
-          <img 
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkAuqBBI9XR1dXIBcybzR2fytTQYE-Iv4bqYJLDUgcrdqDnNixgHzHvZZNZ7IoGHYpEVt0oXEX4BmPySwidDia0lxUgUNaw_Vy635cM2AE9_cuMVXWFW8wSHRoTe__lhtEtUL7lwJs0c6syZVQw0BcqdNG_OKzuJPkiCVXYJsr-HsWzhwcjSW6iaimit5ifDRCrrc-f58ah8MP1EzRF-qGXHUZoqeEIiYQtT46qlM1-stA2ww5p0Ru8_FzaUJ4CjpOFkg9lCp5V70" 
-            alt="Drone Fleet" 
+          <img
+            src="/images/backgrounds/career_bg.png"
+            alt="Drone Fleet"
             className="w-full h-full object-cover filter brightness-50 mix-blend-luminosity scale-105 animate-[pulse_10s_ease-in-out_infinite]"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-surface-container-highest/90 via-surface-container-highest/70 to-transparent"></div>
+          <div className="absolute inset-0 bg-linear-to-r from-surface-container-highest/90 via-surface-container-highest/70 to-transparent"></div>
           <div className="absolute inset-0 grid-overlay opacity-30"></div>
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20 mix-blend-overlay"></div>
         </div>
-        
+
         <div className="relative z-10 flex flex-col items-start max-w-5xl mx-auto px-4 w-full">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -32,27 +32,27 @@ export default function Career() {
               Restricted Recruitment
             </span>
           </motion.div>
-          
-          <motion.h1 
+
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="font-headline text-5xl md:text-7xl lg:text-8xl font-black tracking-tight text-white leading-[1] uppercase mb-8"
+            className="font-headline text-5xl md:text-7xl lg:text-8xl font-black tracking-tight text-white leading-none uppercase mb-8"
           >
             Build the Apex <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-container">Predators of the Sky.</span>
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-primary-container">Predators of the Sky.</span>
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             className="font-body text-gray-300 text-xl leading-relaxed max-w-2xl mb-12 border-l-2 border-primary/50 pl-6"
           >
-            We don't build toys. We engineer the most lethal, autonomous, and resilient drone defense networks on the planet. We need elite operatives who thrive on solving impossible aerospace challenges.
+            We don&apos;t build toys. We engineer the most lethal, autonomous, and resilient drone defense networks on the planet. We need elite operatives who thrive on solving impossible aerospace challenges.
           </motion.p>
 
-          <motion.button 
+          <motion.button
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -64,7 +64,7 @@ export default function Career() {
 
         {/* Tactical decorative elements */}
         <div className="absolute bottom-6 right-6 font-mono text-[10px] text-tertiary tracking-widest text-right z-10 opacity-70">
-          CLEARANCE: TIER 1<br/>
+          CLEARANCE: TIER 1<br />
           SECTOR: R&D
         </div>
       </section>
@@ -101,16 +101,16 @@ export default function Career() {
       {/* Core Divisions */}
       <section className="bg-surface-container-low p-12 md:p-20 relative overflow-hidden border border-outline-variant/10">
         <div className="absolute inset-0 grid-overlay opacity-10"></div>
-        
+
         <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16">
           <div className="lg:col-span-4 flex flex-col gap-6">
-            <h2 className="font-headline text-4xl font-bold uppercase tracking-tight text-white leading-tight">Tactical <br/>Divisions</h2>
+            <h2 className="font-headline text-4xl font-bold uppercase tracking-tight text-white leading-tight">Tactical <br />Divisions</h2>
             <div className="w-16 h-1 bg-tertiary"></div>
             <p className="font-body text-on-surface-variant">
               We operate in highly specialized cells. Find the division that aligns with your destructive creativity.
             </p>
           </div>
-          
+
           <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-8">
             <div className="p-8 border border-outline-variant/20 bg-surface/50 backdrop-blur-sm group hover:bg-surface transition-colors">
               <h3 className="font-headline text-xl font-bold text-primary uppercase mb-2">Aeronautical & Propulsion</h3>
@@ -119,7 +119,7 @@ export default function Career() {
             </div>
             <div className="p-8 border border-outline-variant/20 bg-surface/50 backdrop-blur-sm group hover:bg-surface transition-colors">
               <h3 className="font-headline text-xl font-bold text-primary uppercase mb-2">Autonomous AI Systems</h3>
-              <p className="font-body text-sm text-on-surface-variant mb-4">Write the "brains" of the fleet. Develop object recognition, autonomous target acquisition, and complex swarm coordination.</p>
+              <p className="font-body text-sm text-on-surface-variant mb-4">Write the &quot;brains&quot; of the fleet. Develop object recognition, autonomous target acquisition, and complex swarm coordination.</p>
               <div className="font-mono text-[10px] text-tertiary tracking-widest">[ HIGH PRIORITY ]</div>
             </div>
             <div className="p-8 border border-outline-variant/20 bg-surface/50 backdrop-blur-sm group hover:bg-surface transition-colors">
@@ -153,14 +153,14 @@ export default function Career() {
             </div>
             <span className="font-mono text-[10px] text-on-surface-variant uppercase tracking-widest">RECRUITMENT_DB_v2.4</span>
           </div>
-          
+
           {/* Terminal Body */}
           <div className="p-8 font-mono text-sm flex flex-col gap-6 relative">
-            <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%] pointer-events-none z-10"></div>
-            
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-size-[100%_4px,3px_100%] pointer-events-none z-10"></div>
+
             <div className="text-primary mb-4">
-              &gt; INITIALIZING RECRUITMENT PROTOCOL...<br/>
-              &gt; SCANNING FOR ELITE CANDIDATES...<br/>
+              &gt; INITIALIZING RECRUITMENT PROTOCOL...<br />
+              &gt; SCANNING FOR ELITE CANDIDATES...<br />
               &gt; 4 DIRECTIVES FOUND.
             </div>
 

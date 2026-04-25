@@ -1,0 +1,250 @@
+version: "2"
+type: frontend
+tech_stack:
+  - TypeScript
+  - Next.js 15
+  - React 18
+  - Tailwind CSS v4
+  - Framer Motion
+  - Material Symbols Outlined (Google Fonts)
+  - Inter (Google Fonts)
+  - Space Grotesk (Google Fonts)
+routes:
+  - path: /
+    file: app/page.tsx
+    auth_required: false
+    description: Homepage with hero, parallax, horizontal scroll cards, circular cards, drone assembly, partner logos and CTA
+  - path: /about-us
+    file: app/about-us/page.tsx
+    auth_required: false
+    description: About Us page with company origins, core doctrine bento grid, and leadership section
+  - path: /services
+    file: app/services/page.tsx
+    auth_required: false
+    description: Services page listing defense service offerings with imagery
+  - path: /products
+    file: app/products/page.tsx
+    auth_required: false
+    description: Product catalog grid showing all 11 drone/UAV products
+  - path: /products/[id]
+    file: app/products/[id]/page.tsx
+    auth_required: false
+    description: Individual product detail page with specs and acquisition CTA
+  - path: /news
+    file: app/news/page.tsx
+    auth_required: false
+    description: News and press releases page
+  - path: /career
+    file: app/career/page.tsx
+    auth_required: false
+    description: Career page with Active Directives job listings and tactical division info
+  - path: /contact
+    file: app/contact/page.tsx
+    auth_required: false
+    description: Encrypted contact form with partner portal access link
+  - path: /login
+    file: app/login/page.tsx
+    auth_required: false
+    description: Client login page - Command Gateway with operative ID and passphrase fields
+  - path: /signup
+    file: app/signup/page.tsx
+    auth_required: false
+    description: Operative registration/signup page with 6-field form
+  - path: /forgot-password
+    file: app/forgot-password/page.tsx
+    auth_required: false
+    description: Clearance reset page with email input
+features:
+  - name: Navigation Bar
+    description: Fixed top navigation bar with brand logo, page links, and CLIENT LOGIN button
+    files:
+      - components/NavBar.tsx
+    entry_route: /
+    user_interactions:
+      - Click logo to navigate to homepage
+      - Click nav links (Home, About, Services, Products, News, Career, Contact) to navigate
+      - Click CLIENT LOGIN button to go to /login
+      - On mobile, click hamburger icon to open full-screen overlay menu
+      - Click links in mobile menu to navigate and close overlay
+    api_calls: []
+    auth_required: false
+
+  - name: Homepage Hero
+    description: Animated hero section with parallax background, 3-line stacked heading, two CTA buttons, and a tactical status card
+    files:
+      - app/page.tsx
+    entry_route: /
+    user_interactions:
+      - View animated hero text (Precision / Protection / Power)
+      - Click Request Proposal button
+      - Click Explore Solutions button
+      - Scroll to trigger hero fade-out parallax
+    api_calls: []
+    auth_required: false
+
+  - name: Horizontal Scroll Cards
+    description: Section with 3 horizontally scrollable solution cards (Unmanned Systems, Global Surveillance, Cyber Security)
+    files:
+      - app/page.tsx
+      - components/HorizontalScroll.tsx
+    entry_route: /
+    user_interactions:
+      - Mouse drag to scroll cards horizontally
+      - Hover on cards to see image opacity change
+    api_calls: []
+    auth_required: false
+
+  - name: Product Catalog
+    description: Grid of 11 drone/UAV product cards with hover terminal tooltip
+    files:
+      - app/products/page.tsx
+      - components/ProductGrid.tsx
+      - lib/products.ts
+    entry_route: /products
+    user_interactions:
+      - View all 11 products in responsive grid
+      - Hover over product card to see terminal tooltip with specs
+      - Hover over ACQUIRE SYSTEM button to trigger red alert tooltip mode
+      - Click ACQUIRE SYSTEM button to navigate to /products/[id]
+    api_calls: []
+    auth_required: false
+
+  - name: Product Detail View
+    description: Detailed product page with tactical specs, terminal analysis, and confirm acquisition CTA
+    files:
+      - app/products/[id]/page.tsx
+      - lib/products.ts
+    entry_route: /products/01
+    user_interactions:
+      - View product name, system ID, RESTRICTED badge
+      - View tactical specifications table
+      - View terminal system analysis block
+      - Click ABORT AND RETURN to go back to /products
+      - Click CONFIRM ACQUISITION button
+    api_calls: []
+    auth_required: false
+
+  - name: Contact Form
+    description: Encrypted contact form with 5 fields and Partner Portal access link
+    files:
+      - app/contact/page.tsx
+    entry_route: /contact
+    user_interactions:
+      - Fill in Operative Name text field
+      - Fill in Sur/Code Name text field
+      - Fill in Organization/Agency text field
+      - Select Security Clearance level from dropdown
+      - Fill in Encrypted Payload textarea
+      - Click TRANSMIT button to submit
+      - Click AUTHORIZE ACCESS in Partner Portal section to navigate to /login
+    api_calls: []
+    auth_required: false
+
+  - name: Client Login
+    description: Command Gateway authentication form with operative ID, passphrase, and remember session checkbox
+    files:
+      - app/login/page.tsx
+    entry_route: /login
+    user_interactions:
+      - View status ticker bar showing security info
+      - Fill in Operative ID / Clearance Code field
+      - Fill in Security Passphrase field
+      - Check/uncheck Remember Terminal Session checkbox
+      - Click AUTHORIZE ACCESS button
+      - Click RESET CLEARANCE? link to go to /forgot-password
+      - Click INITIATE CLEARANCE REQUEST to go to /signup
+    api_calls: []
+    auth_required: false
+
+  - name: Operative Registration (Signup)
+    description: 6-field registration form for new operatives
+    files:
+      - app/signup/page.tsx
+    entry_route: /signup
+    user_interactions:
+      - Fill in Operative Name
+      - Fill in Requested ID
+      - Fill in Affiliation / Agency
+      - Select Clearance Level from dropdown
+      - Fill in Security Passphrase
+      - Fill in Verify Passphrase
+      - Click SUBMIT CLEARANCE REQUEST button
+      - Click RETURN TO COMMAND GATEWAY to go to /login
+    api_calls: []
+    auth_required: false
+
+  - name: Forgot Password / Clearance Reset
+    description: Single-field form for requesting a passphrase reset
+    files:
+      - app/forgot-password/page.tsx
+    entry_route: /forgot-password
+    user_interactions:
+      - Fill in email/operative ID field
+      - Click TRANSMIT RESET CODE button
+      - Click Return to Command Gateway link to go to /login
+    api_calls: []
+    auth_required: false
+
+  - name: Career Page
+    description: Recruitment page with environment highlights, tactical divisions, and terminal job listings
+    files:
+      - app/career/page.tsx
+    entry_route: /career
+    user_interactions:
+      - View hero heading and CTA button
+      - View 3 infrastructure feature cards
+      - View 4 tactical division cards
+      - Hover over job listings to reveal INITIATE UPLOAD text
+    api_calls: []
+    auth_required: false
+
+  - name: About Us Page
+    description: Company origin story, core doctrine bento grid, and technology leadership section
+    files:
+      - app/about-us/page.tsx
+    entry_route: /about-us
+    user_interactions:
+      - View animated hero heading and stats (2010, 40+ patents)
+      - View 3 core doctrine cards (Mission, Vision, Values)
+      - View leadership technology section
+      - Click View Technical Specs button
+    api_calls: []
+    auth_required: false
+
+  - name: Footer
+    description: Site footer with brand name, copyright, and quick links
+    files:
+      - components/Footer.tsx
+    entry_route: /
+    user_interactions:
+      - View brand name and copyright
+      - Hover over footer links to see gold color change
+      - Click footer links (Privacy Policy, Terms of Service, Careers, Download Brochures, Partner Portal)
+    api_calls: []
+    auth_required: false
+
+known_limitations:
+  - issue: Login form has no backend authentication — button is type=button with no action
+    location: app/login/page.tsx
+    impact: Cannot test actual login success/failure states
+  - issue: Signup form has no backend user creation
+    location: app/signup/page.tsx
+    impact: Cannot test registration success
+  - issue: Forgot password form has no email dispatch API
+    location: app/forgot-password/page.tsx
+    impact: Cannot test reset email delivery
+  - issue: Contact form TRANSMIT button has no API integration
+    location: app/contact/page.tsx
+    impact: Form submission cannot be validated end-to-end
+  - issue: Footer links all use href="#" (placeholder)
+    location: components/Footer.tsx
+    impact: Footer link navigation cannot be fully tested
+  - issue: Homepage Request Proposal and Explore Solutions buttons have no navigation
+    location: app/page.tsx
+    impact: CTA button functionality is visual only
+  - issue: Product images all use same placeholder Google image URL
+    location: lib/products.ts
+    impact: Cannot differentiate products visually by image
+  - issue: Product specs all show TBD placeholder data
+    location: lib/products.ts
+    impact: Spec content cannot be validated against real data

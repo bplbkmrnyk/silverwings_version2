@@ -1,0 +1,17 @@
+{
+  "status": "commited",
+  "type": "frontend",
+  "scope": "codebase",
+  "localEndpoint": "http://localhost:3000",
+  "executionArgs": {
+    "projectName": "silverwings",
+    "projectPath": "d:\\WORK\\silverwings",
+    "testIds": [],
+    "additionalInstruction": "The site is a Next.js military defense portal running in dev mode on port 3000. All forms (login, signup, forgot-password, contact) have no backend - buttons use type=button so no actual submissions occur. Footer links use href='#'. Focus on navigation flows, page rendering, form field presence, responsive layout, and interactive elements like hover states and animations. Do NOT expect API calls to succeed.",
+    "serverMode": "development",
+    "envs": {
+      "API_KEY": "sk-user-fBpSHJ_fb3KWwqCqZAwb8DITO5w7MkwHCiahIlTCzcqgjxRTvyz9Iz12zDK9LqVmcNTk3E-pEmUcV51FWOiMEJmGd_dvwyk_hLBpXFz6jxehLkH1O_9OLDJ1hUo6iowHW9Y"
+    }
+  },
+  "serverPort": 58668
+}

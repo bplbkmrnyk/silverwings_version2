@@ -67,7 +67,7 @@ function CircularCard({ card }: { card: typeof cards[0] }) {
   // Right column rotates clockwise and translates right.
   
   let xOffset = 0;
-  let yOffset = 250; // Every card starts physically 250px lower
+  const yOffset = 250; // Every card starts physically 250px lower
   let rotateOffset = 0;
   let initialScale = 0.8;
 
@@ -131,8 +131,8 @@ export default function CircularCardsSection() {
       <div className="relative w-full max-w-[1250px] mx-auto px-6">
         
         {/* Horizontal connecting lines */}
-        <div className="absolute top-[380px] left-0 right-0 h-[1px] bg-white/10 z-0 hidden md:block"></div>
-        <div className="absolute top-[810px] left-0 right-0 h-[1px] bg-white/10 z-0 hidden md:block"></div>
+        <div className="absolute top-[380px] left-0 right-0 h-px bg-white/10 z-0 hidden md:block"></div>
+        <div className="absolute top-[810px] left-0 right-0 h-px bg-white/10 z-0 hidden md:block"></div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-y-12 gap-x-8 justify-items-center items-center relative z-10">
           {cards.map((card) => (

@@ -1,11 +1,13 @@
 import ProductGrid from '@/components/ProductGrid';
 import { getProducts } from '@/lib/products';
+import PageBackground from '@/components/PageBackground';
 
 export default async function Products() {
   const products = await getProducts();
 
   return (
-    <main className="pt-32 pb-24 px-6 md:px-12 max-w-[1600px] mx-auto">
+    <main className="pt-32 pb-24 px-6 md:px-12 max-w-[1600px] mx-auto relative overflow-hidden">
+      <PageBackground src="/images/backgrounds/products_bg.png" alt="Products Background" opacity={0.4} />
       {/* Header Section */}
       <header className="mb-20">
         <div className="flex flex-col md:flex-row justify-between items-end border-b ghost-border pb-8">

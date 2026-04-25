@@ -6,8 +6,6 @@ export default async function SingleProductPage({ params }: { params: { id: stri
   const product = await getProductById(id);
   
   const name = product?.name || 'Unknown System';
-  const type = product?.type || 'Classified';
-  const image = product?.image || "https://lh3.googleusercontent.com/aida-public/AB6AXuBT7fkLl2-xe0clYXsvmZP66KeTGsIhUxTBls4X2NYOC0fG00Atdj5rmuDGIgdJQozI1LwTyekkZ9MBpqTIFx7F5i-fPMCHYTd2wYPPLf-dX9k9_hyG-YCfq-kbWc4tiPFKFPHLBvabUSXHLBzS4pi1nxpCvmHMYZbuTfOQ3nbLPTVKB93ldy74InJPjIYJ1yTPS6yEnQrbGOURmKpb5oByeXQ6Zpi_QpbBzaLaXLiaR1Tgfjkj9PCwvxyLXBpEGN7FBfYYLjno7qk";
 
   return (
     <main className="min-h-screen pt-24 bg-[#0a0a0a] flex flex-col relative overflow-hidden font-body">
@@ -25,7 +23,7 @@ export default async function SingleProductPage({ params }: { params: { id: stri
         </div>
       </div>
 
-      <div className="flex-grow w-full max-w-[1800px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-[1px] bg-primary/20 relative z-10 border-x ghost-border">
+      <div className="grow w-full max-w-[1800px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-px bg-primary/20 relative z-10 border-x ghost-border">
         
         {/* Left Column - Visuals */}
         <div className="lg:col-span-7 relative bg-surface-container-lowest flex items-center justify-center p-8 md:p-16 min-h-[60vh] lg:min-h-0 overflow-hidden">
@@ -36,8 +34,8 @@ export default async function SingleProductPage({ params }: { params: { id: stri
           <div className="absolute bottom-8 left-8 border-b-2 border-l-2 border-primary w-16 h-16 opacity-50"></div>
           <div className="absolute bottom-8 right-8 border-b-2 border-r-2 border-primary w-16 h-16 opacity-50"></div>
           
-          <div className="absolute top-1/2 left-0 w-full h-[1px] bg-primary/20 pointer-events-none"></div>
-          <div className="absolute left-1/2 top-0 w-[1px] h-full bg-primary/20 pointer-events-none"></div>
+          <div className="absolute top-1/2 left-0 w-full h-px bg-primary/20 pointer-events-none"></div>
+          <div className="absolute left-1/2 top-0 w-px h-full bg-primary/20 pointer-events-none"></div>
 
           <div className="relative w-full max-w-2xl aspect-square group flex items-center justify-center">
             {/* Rotating targeting rings */}

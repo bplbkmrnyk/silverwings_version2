@@ -61,11 +61,14 @@ const NEWS_DATA = {
   ]
 };
 
+import PageBackground from "@/components/PageBackground";
+
 export default function News() {
   const [activeTab, setActiveTab] = useState<Category>("company");
 
   return (
-    <main className="flex-grow pt-32 pb-24 bg-surface">
+    <main className="grow pt-32 pb-24 relative overflow-hidden">
+      <PageBackground src="/images/backgrounds/news_bg.png" alt="News Background" opacity={0.4} />
       {/* Hero Section */}
       <section className="px-6 md:px-10 max-w-[1600px] mx-auto mb-16 relative">
         <div className="absolute top-0 right-10 text-on-surface-variant font-mono text-[10px] tracking-widest opacity-40 text-right leading-tight hidden md:block">
@@ -75,7 +78,7 @@ export default function News() {
         </div>
         <h1 className="font-headline text-5xl md:text-8xl font-black tracking-tighter text-on-surface mb-6 uppercase">
           Tactical <br/>
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-on-primary-container">Intelligence</span>
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-on-primary-container">Intelligence</span>
         </h1>
         <p className="font-body text-on-surface-variant max-w-2xl text-lg leading-relaxed border-l-2 border-primary/50 pl-6">
           Unfiltered strategic updates, global security analysis, and critical milestones from the forefront of modern defense engineering.
@@ -119,7 +122,7 @@ export default function News() {
                   <span className="font-mono text-[10px] text-primary tracking-widest uppercase">{article.tag}</span>
                 </div>
               </div>
-              <div className="p-8 relative z-20 flex-grow flex flex-col justify-between border-t border-primary/20">
+              <div className="p-8 relative z-20 grow flex flex-col justify-between border-t border-primary/20">
                 <div>
                   <div className="flex items-center gap-4 mb-4">
                     <span className="font-mono text-xs text-on-surface-variant tracking-widest">{article.date}</span>
@@ -150,7 +153,7 @@ export default function News() {
           {/* Graphic Side */}
           <div className="w-full md:w-5/12 h-64 md:h-auto relative bg-surface-container-lowest self-stretch">
             <img alt="Server Room" className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-luminosity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbsxZFoNH20xSLvEM2BzoMjQuN4-ms4YY2YLQIJzYhyMlw4TBavoTzOwQ-YgCG812NmXzQsWM4hffWOjwxTWVl6Wv1D211NMxHAS_11uUmBPmhQ9c5taW52_CKhq9dZl_6fxYyWfi6-Pg9hNYrUJtYhAOgmBkfWGll76HAU199UMkwykg71K7YSCaQxtxKr3FmWugl6K9ypKemNAhf1vo3jLnecschyLll2-rIdkzOUTEkjnWNZUCZJNZaP4C7dO10pxRtFmqbwL8"/>
-            <div className="absolute inset-0 bg-gradient-to-r from-surface-container-high/10 to-surface-container-high"></div>
+            <div className="absolute inset-0 bg-linear-to-r from-surface-container-high/10 to-surface-container-high"></div>
             <div className="absolute bottom-8 left-8 text-tertiary flex items-center gap-2">
               <span className="material-symbols-outlined icon-fill">radar</span>
               <span className="font-mono text-xs tracking-widest uppercase">Secure Channel</span>
@@ -163,11 +166,11 @@ export default function News() {
               Subscribe to receive unclassified briefings, technological whitepapers, and operational insights directly to your terminal.
             </p>
             <form className="flex flex-col sm:flex-row gap-4">
-              <div className="relative flex-grow">
+              <div className="relative grow">
                 <input className="tactical-input w-full bg-surface-container-highest border-0 border-b border-outline-variant text-on-surface font-mono text-sm px-4 py-4 placeholder:text-outline-variant/60 focus:ring-0 transition-all focus:bg-primary/5 focus:outline-none" placeholder="ENTER OPERATIVE DESIGNATION (EMAIL)" type="email"/>
                 <span className="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline-variant text-sm">mail</span>
               </div>
-              <button className="bg-gradient-to-br from-primary to-on-primary-container text-on-primary uppercase font-bold tracking-widest text-sm px-8 py-4 hover:brightness-110 transition-all ambient-shadow flex items-center justify-center gap-2 whitespace-nowrap" type="button">
+              <button className="bg-linear-to-br from-primary to-on-primary-container text-on-primary uppercase font-bold tracking-widest text-sm px-8 py-4 hover:brightness-110 transition-all ambient-shadow flex items-center justify-center gap-2 whitespace-nowrap" type="button">
                 Initialize <span className="material-symbols-outlined text-sm">arrow_forward</span>
               </button>
             </form>

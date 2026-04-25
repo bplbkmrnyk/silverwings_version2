@@ -1,0 +1,911 @@
+[
+  {
+    "id": "TC001",
+    "title": "Navigate between primary pages using desktop NavBar and logo",
+    "description": "Verifies a visitor can use the top navigation and logo to move between key pages and return to the homepage successfully.",
+    "category": "Navigation Bar",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Click the About navigation link"
+      },
+      {
+        "type": "action",
+        "description": "Click the Products navigation link"
+      },
+      {
+        "type": "action",
+        "description": "Click the brand logo"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user lands on the homepage"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC002",
+    "title": "Prospect evaluates catalog and returns to product list",
+    "description": "Verifies a prospect can browse the product grid, view hover tooltip, open a product detail, and return to the catalog successfully.",
+    "category": "Product Catalog",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /products"
+      },
+      {
+        "type": "action",
+        "description": "Hover over a product card"
+      },
+      {
+        "type": "action",
+        "description": "Click the product acquisition call-to-action on that card"
+      },
+      {
+        "type": "action",
+        "description": "Click the abort-and-return control"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the product catalog grid is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC003",
+    "title": "Enter credentials and toggle session persistence on Command Gateway",
+    "description": "Verifies an operative can enter an ID and passphrase, toggle session persistence, and invoke the authorize action without page errors.",
+    "category": "Client Login (Command Gateway)",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_USER}} into the operative ID field"
+      },
+      {
+        "type": "action",
+        "description": "Fill {{LOGIN_PASSWORD}} into the security passphrase field"
+      },
+      {
+        "type": "action",
+        "description": "Click the remember terminal session checkbox"
+      },
+      {
+        "type": "action",
+        "description": "Submit the authorize access action"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the login view remains usable with no visible error state or broken layout"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC004",
+    "title": "Use mobile hamburger menu to navigate to Contact and close overlay",
+    "description": "Verifies a mobile visitor can open the hamburger overlay menu, navigate to Contact, and the overlay closes after navigation.",
+    "category": "Navigation Bar",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Set the viewport to a mobile size"
+      },
+      {
+        "type": "action",
+        "description": "Click the hamburger menu icon"
+      },
+      {
+        "type": "action",
+        "description": "Click the Contact link in the overlay menu"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user lands on the contact page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the mobile navigation overlay is closed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC005",
+    "title": "Return to catalog from product detail",
+    "description": "Verifies a user can exit a product detail page and return to the product catalog.",
+    "category": "Product Detail View",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /products"
+      },
+      {
+        "type": "action",
+        "description": "Click the product acquisition call-to-action on a product card"
+      },
+      {
+        "type": "action",
+        "description": "Click the abort-and-return control"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the product catalog grid is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC006",
+    "title": "Enter Command Gateway via CLIENT LOGIN from NavBar",
+    "description": "Verifies a visitor can reach the Command Gateway login screen from the persistent navigation.",
+    "category": "Navigation Bar",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Click the client login entry in the navigation bar"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user lands on the login page"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC007",
+    "title": "Discover all products in catalog grid",
+    "description": "Verifies the catalog page renders a complete grid of products for discovery.",
+    "category": "Product Catalog",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /products"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify 11 product cards are displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC008",
+    "title": "Product detail shows required tactical content blocks",
+    "description": "Verifies the product detail page displays system identification, restricted badge, specs table, analysis block, and acquisition action.",
+    "category": "Product Detail View",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /products"
+      },
+      {
+        "type": "action",
+        "description": "Click the product acquisition call-to-action on a product card"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the product detail shows a system ID, a restricted badge, a specifications table, and a terminal analysis block"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a confirm acquisition action is present"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC009",
+    "title": "Open a product detail page from the catalog",
+    "description": "Verifies selecting a product from the catalog navigates to a product detail view.",
+    "category": "Product Catalog",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /products"
+      },
+      {
+        "type": "action",
+        "description": "Click the product acquisition call-to-action on a product card"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a product detail view is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC010",
+    "title": "Navigate from login to clearance reset and to operative registration",
+    "description": "Verifies a user can reach both the clearance reset and clearance request screens from the login page via in-app navigation.",
+    "category": "Client Login (Command Gateway)",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Click the reset clearance link"
+      },
+      {
+        "type": "action",
+        "description": "Click the return to command gateway link"
+      },
+      {
+        "type": "action",
+        "description": "Click the initiate clearance request link"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the operative registration view is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC011",
+    "title": "Contact-to-gateway via Partner Portal authorize access link",
+    "description": "Verifies a partner can navigate from the contact page Partner Portal section to the command gateway login screen.",
+    "category": "Contact Form (Encrypted)",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /contact"
+      },
+      {
+        "type": "action",
+        "description": "Click the authorize access link in the Partner Portal section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the command gateway login screen is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC012",
+    "title": "View terminal tooltip on product card hover",
+    "description": "Verifies hovering a product card reveals a terminal-style tooltip with product information.",
+    "category": "Product Catalog",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /products"
+      },
+      {
+        "type": "action",
+        "description": "Hover over a product card"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a terminal-style tooltip with product details is displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC013",
+    "title": "Request clearance with all required registration fields completed",
+    "description": "Verifies an operative can complete the signup form with valid values and submit a clearance request via client-side interaction.",
+    "category": "Operative Registration (Signup)",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /signup"
+      },
+      {
+        "type": "action",
+        "description": "Fill OpName-Alpha into the operative name field"
+      },
+      {
+        "type": "action",
+        "description": "Fill req-id-alpha into the requested ID field"
+      },
+      {
+        "type": "action",
+        "description": "Fill Agency Unit 7 into the affiliation or agency field"
+      },
+      {
+        "type": "action",
+        "description": "Select a clearance level from the clearance dropdown"
+      },
+      {
+        "type": "action",
+        "description": "Fill Passphrase-Alpha1! into the security passphrase field"
+      },
+      {
+        "type": "action",
+        "description": "Fill Passphrase-Alpha1! into the verify passphrase field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the clearance request"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the page remains on the signup view with the form still accessible after submission"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC014",
+    "title": "Encrypted contact form accepts input and transmits client-side",
+    "description": "Verifies a partner can complete all encrypted contact fields, select a clearance level, and initiate transmit client-side.",
+    "category": "Contact Form (Encrypted)",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /contact"
+      },
+      {
+        "type": "action",
+        "description": "Fill Operative Name into the operative name field"
+      },
+      {
+        "type": "action",
+        "description": "Fill a Sur/Code Name into the code name field"
+      },
+      {
+        "type": "action",
+        "description": "Fill an Organization/Agency into the organization field"
+      },
+      {
+        "type": "action",
+        "description": "Select a security clearance level from the clearance dropdown"
+      },
+      {
+        "type": "action",
+        "description": "Fill a message into the encrypted payload field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the transmit action"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a client-side transmit confirmation state is visible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC015",
+    "title": "Block submission when verify passphrase mismatches and allow correction",
+    "description": "Verifies mismatched passphrases trigger client-side validation and that correcting the verify passphrase allows the request to be submitted.",
+    "category": "Operative Registration (Signup)",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /signup"
+      },
+      {
+        "type": "action",
+        "description": "Fill OpName-Bravo into the operative name field"
+      },
+      {
+        "type": "action",
+        "description": "Fill req-id-bravo into the requested ID field"
+      },
+      {
+        "type": "action",
+        "description": "Fill Agency Unit 9 into the affiliation or agency field"
+      },
+      {
+        "type": "action",
+        "description": "Select a clearance level from the clearance dropdown"
+      },
+      {
+        "type": "action",
+        "description": "Fill Passphrase-Bravo1! into the security passphrase field"
+      },
+      {
+        "type": "action",
+        "description": "Fill Passphrase-Bravo2! into the verify passphrase field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the clearance request"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a passphrase mismatch validation error is visible"
+      },
+      {
+        "type": "action",
+        "description": "Fill Passphrase-Bravo1! into the verify passphrase field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the clearance request"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the mismatch validation error is no longer visible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC016",
+    "title": "Red alert mode appears when hovering acquisition call-to-action",
+    "description": "Verifies the acquisition hover state triggers a red alert mode in the tooltip for the hovered product.",
+    "category": "Product Catalog",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /products"
+      },
+      {
+        "type": "action",
+        "description": "Hover over the product acquisition call-to-action on a product card"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the terminal tooltip switches into a red alert state"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC017",
+    "title": "Transmit a clearance reset request with a valid email format",
+    "description": "Verifies a user can enter a valid email format and invoke the clearance reset transmit action without validation errors.",
+    "category": "Forgot Password / Clearance Reset",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /forgot-password"
+      },
+      {
+        "type": "action",
+        "description": "Fill operative.alpha@example.com into the email or operative ID field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the transmit reset code action"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify no email format validation error is visible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC018",
+    "title": "Show validation for invalid email format and allow retry",
+    "description": "Verifies invalid email input triggers a client-side validation error and that correcting the email clears the error on submission.",
+    "category": "Forgot Password / Clearance Reset",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /forgot-password"
+      },
+      {
+        "type": "action",
+        "description": "Fill invalid-email into the email or operative ID field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the transmit reset code action"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify an email format validation error is visible"
+      },
+      {
+        "type": "action",
+        "description": "Fill operative.bravo@example.com into the email or operative ID field"
+      },
+      {
+        "type": "action",
+        "description": "Submit the transmit reset code action"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the email format validation error is no longer visible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC019",
+    "title": "View services offerings list",
+    "description": "Verifies a buyer can open the services page and see service offering cards with accompanying imagery.",
+    "category": "Services and News",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /services"
+      },
+      {
+        "type": "action",
+        "description": "Scroll through the services content"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify service offering cards are displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify service-related imagery is displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC020",
+    "title": "Return to Command Gateway from signup",
+    "description": "Verifies a user can navigate back to the Command Gateway login from the registration screen.",
+    "category": "Operative Registration (Signup)",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /signup"
+      },
+      {
+        "type": "action",
+        "description": "Click the return to command gateway action"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the command gateway login view is displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC021",
+    "title": "Browse career page content sections",
+    "description": "Verifies a recruit can load the career page and see the hero/CTA plus infrastructure and tactical division sections rendered.",
+    "category": "Career Page",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /career"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the infrastructure feature cards section"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the tactical division cards section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the career hero section and call-to-action are displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify infrastructure feature cards and tactical division cards are displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC022",
+    "title": "View news and press releases list",
+    "description": "Verifies a buyer can open the news page and see a list of news items with associated images.",
+    "category": "Services and News",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /news"
+      },
+      {
+        "type": "action",
+        "description": "Scroll through the news list"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify news or press release items are displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify news item images are displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC023",
+    "title": "Return to Command Gateway from clearance reset",
+    "description": "Verifies a user can navigate back to the login screen from the clearance reset screen.",
+    "category": "Forgot Password / Clearance Reset",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /forgot-password"
+      },
+      {
+        "type": "action",
+        "description": "Click the return to command gateway link"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the command gateway login view is displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC024",
+    "title": "View About Us story, stats, and doctrine cards",
+    "description": "Verifies a prospect can load the About Us page and see company stats plus the three core doctrine cards.",
+    "category": "About Us Page",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /about-us"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the stats section"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the core doctrine cards section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the company hero and stats are displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the core doctrine cards are displayed"
+      }
+    ],
+    "priority": "Low"
+  },
+  {
+    "id": "TC025",
+    "title": "Footer branding visible on homepage",
+    "description": "Verifies a user can reach the page footer on the homepage and see the footer branding and copyright information displayed.",
+    "category": "Footer",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the bottom of the page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the footer is displayed with the site branding"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the footer shows copyright information"
+      }
+    ],
+    "priority": "Low"
+  },
+  {
+    "id": "TC026",
+    "title": "Swipe/drag horizontally through Core Solutions cards",
+    "description": "Verifies a visitor can horizontally scroll through the Core Solutions cards using drag/swipe input and see the content move.",
+    "category": "Horizontal Scroll Cards (Core Solutions)",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the Core Solutions horizontal cards section"
+      },
+      {
+        "type": "action",
+        "description": "Press ArrowRight repeatedly while the horizontal scroller is focused"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify different solution cards can be brought into view in the horizontal scroller"
+      }
+    ],
+    "priority": "Low"
+  },
+  {
+    "id": "TC027",
+    "title": "Home hero animation responds to scroll parallax and fade-out",
+    "description": "Verifies the homepage hero performs its reveal and responds to scrolling with a parallax/fade interaction visible to the user.",
+    "category": "Homepage Hero",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Wait for the hero section to finish its initial reveal animation"
+      },
+      {
+        "type": "action",
+        "description": "Scroll down to trigger the hero scroll interaction"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the hero section shows a visible scroll-driven transition (parallax and/or fade)"
+      }
+    ],
+    "priority": "Low"
+  },
+  {
+    "id": "TC028",
+    "title": "Access technical specs from About Us",
+    "description": "Verifies a prospect can click the technical specs call-to-action and see additional technical information surface on the page.",
+    "category": "About Us Page",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /about-us"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the leadership and technology section"
+      },
+      {
+        "type": "action",
+        "description": "Click the button to view technical specs"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify technical specifications content is displayed"
+      }
+    ],
+    "priority": "Low"
+  },
+  {
+    "id": "TC029",
+    "title": "Homepage hero CTA buttons provide interaction feedback",
+    "description": "Verifies the hero CTA buttons can be interacted with and provide visible feedback without requiring navigation.",
+    "category": "Homepage Hero",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Click the Request Proposal call-to-action button"
+      },
+      {
+        "type": "action",
+        "description": "Click the Explore Solutions call-to-action button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the hero call-to-action controls remain visible and interactive after clicks"
+      }
+    ],
+    "priority": "Low"
+  },
+  {
+    "id": "TC030",
+    "title": "Reveal job listing hover action",
+    "description": "Verifies a candidate can hover a job listing and the hidden upload action is revealed.",
+    "category": "Career Page",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /career"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the job listings section"
+      },
+      {
+        "type": "action",
+        "description": "Hover over a job listing item"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the job listing reveals an upload action prompt"
+      }
+    ],
+    "priority": "Low"
+  },
+  {
+    "id": "TC031",
+    "title": "Hovering a Core Solutions card changes its visual state",
+    "description": "Verifies hovering a Core Solutions card produces a visible hover state change on the card content.",
+    "category": "Horizontal Scroll Cards (Core Solutions)",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the Core Solutions horizontal cards section"
+      },
+      {
+        "type": "action",
+        "description": "Move the pointer over a solution card"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the hovered solution card shows a visible hover state change"
+      }
+    ],
+    "priority": "Low"
+  },
+  {
+    "id": "TC032",
+    "title": "Footer quick links are interactive on hover and click",
+    "description": "Verifies a user can interact with footer quick links by hovering and clicking a placeholder link without leaving the current page context unexpectedly.",
+    "category": "Footer",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the bottom of the page"
+      },
+      {
+        "type": "action",
+        "description": "Move the pointer over a footer quick link"
+      },
+      {
+        "type": "action",
+        "description": "Click the footer Partner Portal link"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the footer remains visible after the interaction"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user remains on the homepage"
+      }
+    ],
+    "priority": "Low"
+  },
+  {
+    "id": "TC033",
+    "title": "Rotating ring animations render on About Us",
+    "description": "Verifies the About Us page shows the rotating ring animation elements behind the imagery.",
+    "category": "About Us Page",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /about-us"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the imagery area with ring visuals"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify rotating ring visual elements are displayed"
+      }
+    ],
+    "priority": "Low"
+  }
+]
