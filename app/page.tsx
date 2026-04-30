@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import HorizontalScroll from "@/components/HorizontalScroll";
 import ParallaxImage from "@/components/ParallaxImage";
 import CircularCardsSection from "@/components/CircularCardsSection";
+import DroneSequence from "@/components/DroneSequence";
 import DroneAssemblySection from "@/components/DroneAssemblySection";
 
 // Reusable reveal animation component
@@ -336,6 +337,9 @@ export default function Home() {
 
       {/* ─── Circular Cards Section ─── */}
       <CircularCardsSection />
+
+      {/* ─── Drone Sequence Animation ─── */}
+      <DroneSequence />
 
       {/* ─── Drone Assembly Section ─── */}
       <DroneAssemblySection />
