@@ -39,9 +39,9 @@ export default function DroneSequence() {
   const frameIndexRaw = useTransform(scrollYProgress, [0, 1], [0, frameCount - 1]);
   const frameIndex = useSpring(frameIndexRaw, { damping: 50, stiffness: 200, restDelta: 0.001 });
 
-  // Text that appears after assembly
-  const postAssemblyOpacity = useTransform(scrollYProgress, [0.7, 0.9], [0, 1]);
-  const postAssemblyY = useTransform(scrollYProgress, [0.7, 0.9], [40, 0]);
+  // Text that appears after frame 115 (115/225 ≈ 0.51)
+  const postAssemblyOpacity = useTransform(scrollYProgress, [0.52, 0.58], [0, 1]);
+  const postAssemblyY = useTransform(scrollYProgress, [0.52, 0.58], [40, 0]);
 
   useEffect(() => {
     if (!imagesLoaded) return;

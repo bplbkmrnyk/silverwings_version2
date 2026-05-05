@@ -106,4 +106,22 @@
   .force-circle {
     border-radius: 50% !important;
   }
+
+  .global-cursor-crosshair,
+  .global-cursor-crosshair * {
+    cursor: crosshair !important;
+  }
+  
+  /* Hide the native cursor on interactive elements so the animated target lock takes over */
+  .global-cursor-crosshair a,
+  .global-cursor-crosshair a *,
+  .global-cursor-crosshair button,
+  .global-cursor-crosshair button *,
+  .global-cursor-crosshair [role="button"],
+  .global-cursor-crosshair [role="button"] *,
+  .global-cursor-crosshair input,
+  .global-cursor-crosshair select,
+  .global-cursor-crosshair textarea {
+    cursor: none !important;
+  }
 }

@@ -88,7 +88,7 @@ export default function Login() {
               <div className="text-center">
                 <p className="text-xs font-body text-on-surface-variant">
                   Unregistered Operative?{' '}
-                  <Link href="/signup" className="text-primary hover:text-primary/80 font-bold uppercase tracking-widest transition-colors">
+                  <Link href="/contact" className="text-primary hover:text-primary/80 font-bold uppercase tracking-widest transition-colors">
                     Initiate Clearance Request
                   </Link>
                 </p>

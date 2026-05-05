@@ -1,4 +1,5 @@
 import PageBackground from "@/components/PageBackground";
+import Link from "next/link";
 
 export default function Services() {
   return (
@@ -33,10 +34,10 @@ export default function Services() {
             <p className="text-on-surface-variant text-sm leading-relaxed mb-8 grow">
               Deployment of advanced Unmanned Aerial Vehicles (UAVs) and autonomous tactical systems. Engineered for high-threat environments, providing real-time battlefield reconnaissance and precision strike capabilities.
             </p>
-            <a className="inline-flex items-center gap-2 text-primary font-label text-sm uppercase tracking-widest hover:text-tertiary transition-colors w-max group/link mt-auto" href="#">
+            <Link className="inline-flex items-center gap-2 text-primary font-label text-sm uppercase tracking-widest hover:text-tertiary transition-colors w-max group/link mt-auto" href="/services/defence-solutions">
               Learn More 
               <span className="material-symbols-outlined text-lg transform group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
-            </a>
+            </Link>
           </div>
           <div className="h-1 w-full bg-surface-container group-hover:bg-tertiary transition-colors duration-500"></div>
         </article>
@@ -59,10 +60,10 @@ export default function Services() {
             <p className="text-on-surface-variant text-sm leading-relaxed mb-8 grow">
               Comprehensive border monitoring and persistent aerial surveillance networks. Integrating multi-spectral sensors and AI-driven anomaly detection for impenetrable perimeter defense.
             </p>
-            <a className="inline-flex items-center gap-2 text-primary font-label text-sm uppercase tracking-widest hover:text-tertiary transition-colors w-max group/link mt-auto" href="#">
+            <Link className="inline-flex items-center gap-2 text-primary font-label text-sm uppercase tracking-widest hover:text-tertiary transition-colors w-max group/link mt-auto" href="/services/security-systems">
               Learn More 
               <span className="material-symbols-outlined text-lg transform group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
-            </a>
+            </Link>
           </div>
           <div className="h-1 w-full bg-surface-container group-hover:bg-tertiary transition-colors duration-500"></div>
         </article>
@@ -85,10 +86,10 @@ export default function Services() {
             <p className="text-on-surface-variant text-sm leading-relaxed mb-8 grow">
               Hardened protection for strategic digital assets. Offensive and defensive cyber operations, threat hunting, and encrypted communications infrastructure designed to withstand state-sponsored attacks.
             </p>
-            <a className="inline-flex items-center gap-2 text-primary font-label text-sm uppercase tracking-widest hover:text-tertiary transition-colors w-max group/link mt-auto" href="#">
+            <Link className="inline-flex items-center gap-2 text-primary font-label text-sm uppercase tracking-widest hover:text-tertiary transition-colors w-max group/link mt-auto" href="/services/cybersecurity">
               Learn More 
               <span className="material-symbols-outlined text-lg transform group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
-            </a>
+            </Link>
           </div>
           <div className="h-1 w-full bg-surface-container group-hover:bg-tertiary transition-colors duration-500"></div>
         </article>
@@ -111,10 +112,10 @@ export default function Services() {
             <p className="text-on-surface-variant text-sm leading-relaxed mb-8 grow">
               Elite battlefield strategy and advanced system operation training. Equipping personnel with the tactical acumen required to leverage next-generation defense hardware effectively in combat scenarios.
             </p>
-            <a className="inline-flex items-center gap-2 text-primary font-label text-sm uppercase tracking-widest hover:text-tertiary transition-colors w-max group/link mt-auto" href="#">
+            <Link className="inline-flex items-center gap-2 text-primary font-label text-sm uppercase tracking-widest hover:text-tertiary transition-colors w-max group/link mt-auto" href="/services/training">
               Learn More 
               <span className="material-symbols-outlined text-lg transform group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
-            </a>
+            </Link>
           </div>
           <div className="h-1 w-full bg-surface-container group-hover:bg-tertiary transition-colors duration-500"></div>
         </article>

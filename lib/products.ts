@@ -8,21 +8,20 @@ export interface Product {
 
 // Temporary static data simulating a backend CMS database
 const staticProducts: Product[] = [
-  { id: '01', name: 'Sourya 1000 Hexa', type: 'Hexacopter' },
-  { id: '02', name: 'Sourya Logistic 10', type: 'Logistic Drone' },
-  { id: '03', name: 'CP 15', type: 'UAV' },
-  { id: '04', name: 'Sourya 550 Hexacopter', type: 'Hexacopter' },
-  { id: '05', name: 'Sourya 1718 fixed wings', type: 'Fixed Wing' },
-  { id: '06', name: 'CP 25', type: 'UAV' },
-  { id: '07', name: 'Sourya 680 Quad', type: 'Quadcopter' },
-  { id: '08', name: 'Sourya 500 Quad', type: 'Quadcopter' },
-  { id: '09', name: 'CP7 VTOL fixed wings', type: 'VTOL Fixed Wing' },
-  { id: '10', name: 'CP 50E', type: 'UAV' },
-  { id: '11', name: 'CP 50H', type: 'UAV' },
+  { id: '01', name: 'Sourya 1000 Hexa', type: 'Hexacopter', image: '/images/SILVERWINGSIMAGES/SOURYA 1000 HEXA.jpeg' },
+  { id: '03', name: 'CP 15', type: 'UAV', image: '/images/SILVERWINGSIMAGES/CP15.jpeg' },
+  { id: '07', name: 'Sourya 680 Quad', type: 'Quadcopter', image: '/images/SILVERWINGSIMAGES/SOURYA 680 QUAD.jpeg' },
+  { id: '05', name: 'Sourya 1718 fixed wings', type: 'Fixed Wing', image: '/images/SILVERWINGSIMAGES/SOURYA 1718.jpeg' },
+  { id: '10', name: 'CP 50E', type: 'UAV', image: '/images/SILVERWINGSIMAGES/CP50E.jpeg' },
+  { id: '04', name: 'Sourya 550 Hexacopter', type: 'Hexacopter', image: '/images/SILVERWINGSIMAGES/SOURYA 550 HEXACOPTER.jpeg' },
+  { id: '02', name: 'Sourya Logistic 10', type: 'Logistic Drone', image: '/images/SILVERWINGSIMAGES/SOURYA LOGISTIC 10 KG.jpeg' },
+  { id: '11', name: 'CP 50H', type: 'UAV', image: '/images/SILVERWINGSIMAGES/CP50 H.jpeg' },
+  { id: '08', name: 'Sourya 500 Quad', type: 'Quadcopter', image: '/images/SILVERWINGSIMAGES/SOURYA 500 QUAD.jpeg' },
+  { id: '09', name: 'CP7 VTOL fixed wings', type: 'VTOL Fixed Wing', image: '/images/SILVERWINGSIMAGES/CP7.jpeg' },
+  { id: '06', name: 'CP 25', type: 'UAV', image: '/images/SILVERWINGSIMAGES/CP25.jpeg' },
 ].map(p => ({
   ...p,
-  specs: `CLASSIFICATION: RESTRICTED\nTYPE: ${p.type}\n\n> PAYLOAD CAPACITY : TBD\n> OPERATIONAL RANGE: TBD\n> MAX ENDURANCE    : TBD\n\n[ AWAITING DATAPACK UPLOAD... ]`,
-  image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBT7fkLl2-xe0clYXsvmZP66KeTGsIhUxTBls4X2NYOC0fG00Atdj5rmuDGIgdJQozI1LwTyekkZ9MBpqTIFx7F5i-fPMCHYTd2wYPPLf-dX9k9_hyG-YCfq-kbWc4tiPFKFPHLBvabUSXHLBzS4pi1nxpCvmHMYZbuTfOQ3nbLPTVKB93ldy74InJPjIYJ1yTPS6yEnQrbGOURmKpb5oByeXQ6Zpi_QpbBzaLaXLiaR1Tgfjkj9PCwvxyLXBpEGN7FBfYYLjno7qk"
+  specs: `CLASSIFICATION: RESTRICTED\nTYPE: ${p.type}\n\n> Standard take-off weight: 8 KG\n> Max Payload weight: 1 KG\n> Cruise Speed: 12 m/s\n\n[ AWAITING DATAPACK UPLOAD... ]`,
 }));
 
 /**

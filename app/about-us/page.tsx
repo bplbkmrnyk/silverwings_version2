@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function AboutUs() {
   return (
@@ -12,7 +13,7 @@ export default function AboutUs() {
           <img
             src="/images/backgrounds/about_bg.png"
             alt="Command Center"
-            className="w-full h-full object-cover opacity-20 mix-blend-luminosity"
+            className="w-full h-full object-cover opacity-50"
           />
           <div className="absolute inset-0 bg-linear-to-r from-background via-background/80 to-transparent" />
         </div>
@@ -85,7 +86,7 @@ export default function AboutUs() {
               transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             >
               <img
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBT7fkLl2-xe0clYXsvmZP66KeTGsIhUxTBls4X2NYOC0fG00Atdj5rmuDGIgdJQozI1LwTyekkZ9MBpqTIFx7F5i-fPMCHYTd2wYPPLf-dX9k9_hyG-YCfq-kbWc4tiPFKFPHLBvabUSXHLBzS4pi1nxpCvmHMYZbuTfOQ3nbLPTVKB93ldy74InJPjIYJ1yTPS6yEnQrbGOURmKpb5oByeXQ6Zpi_QpbBzaLaXLiaR1Tgfjkj9PCwvxyLXBpEGN7FBfYYLjno7qk"
+                src="/images/stealth_drone_cinematic.png"
                 alt="Flying Drone"
                 className="w-[90%] max-w-[600px] h-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)] filter brightness-125"
               />
@@ -179,9 +180,9 @@ export default function AboutUs() {
                 <span className="font-body text-sm text-on-surface">EMP Hardened Infrastructure</span>
               </li>
             </ul>
-            <button className="mt-8 self-start border border-tertiary text-tertiary font-headline font-bold uppercase tracking-widest px-8 py-3 hover:bg-tertiary/10 transition-colors">
+            <Link href="/contact" className="mt-8 self-start border border-tertiary text-tertiary font-headline font-bold uppercase tracking-widest px-8 py-3 hover:bg-tertiary/10 transition-colors inline-block text-center">
               View Technical Specs
-            </button>
+            </Link>
           </div>
           <div className="relative h-[400px] w-full bg-surface-container-lowest shadow-[0_20px_40px_rgba(0,0,0,0.4)] p-4 flex flex-col justify-between">
             <img alt="Technology Interface" className="absolute inset-0 w-full h-full object-cover opacity-30" data-alt="Abstract macro shot of a complex circuit board with glowing blue and silver traces, conveying high-tech processing power" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyr-vunu6g6_zGpxg1tw9l1w4_KXS72fzL0O-fnZGOE0od4K3Ck1pOPMau4tzY3jFdz5HX8tWrri6z9JZgegenB2m8v84VO3r2EInerH8C3txch_G51ahizQL2CtqBX7DPsMAazywno8clvY3JFKoNa_yuku_cKE3IzHtDleK9hwgf2Dj6KSopbz4Slgmz9onKG-NVg4jk6lZGjI-yc4uryc-9pGS7SyvueTFfkTc76cJyzpgQoayyqWnxw7Z0hUaOVHTs5UmIgZw" />

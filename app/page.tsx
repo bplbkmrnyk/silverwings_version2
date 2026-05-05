@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import HorizontalScroll from "@/components/HorizontalScroll";
 import ParallaxImage from "@/components/ParallaxImage";
@@ -86,7 +87,7 @@ export default function Home() {
         >
           <img
             alt="Tactical Drone"
-            className="w-full h-full object-cover opacity-30 mix-blend-luminosity"
+            className="w-full h-full object-cover opacity-50"
             src="/images/backgrounds/home_bg.png"
           />
           <div className="absolute inset-0 bg-linear-to-r from-background via-background/80 to-transparent" />
@@ -149,14 +150,14 @@ export default function Home() {
               transition={{ duration: 0.9, delay: 1, ease: [0.16, 1, 0.3, 1] as const }}
               className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-4"
             >
-              <button className="bg-linear-to-tr from-primary to-on-primary-container text-on-primary font-headline font-bold uppercase tracking-widest px-6 md:px-8 py-4 hover:brightness-110 transition-all flex items-center justify-between group">
+              <Link href="/contact" className="bg-linear-to-tr from-primary to-on-primary-container text-on-primary font-headline font-bold uppercase tracking-widest px-6 md:px-8 py-4 hover:brightness-110 transition-all flex items-center justify-between group">
                 <span>Request Proposal</span>
                 <span className="material-symbols-outlined ml-4 group-hover:translate-x-1 transition-transform">arrow_forward</span>
-              </button>
-              <button className="border border-tertiary text-tertiary font-headline font-bold uppercase tracking-widest px-6 md:px-8 py-4 hover:bg-tertiary/10 transition-colors flex items-center justify-between">
+              </Link>
+              <Link href="/contact" className="border border-tertiary text-tertiary font-headline font-bold uppercase tracking-widest px-6 md:px-8 py-4 hover:bg-tertiary/10 transition-colors flex items-center justify-between">
                 <span>Explore Solutions</span>
                 <span className="material-symbols-outlined ml-4">radar</span>
-              </button>
+              </Link>
             </motion.div>
           </div>
           <motion.div
@@ -373,10 +374,10 @@ export default function Home() {
               Review our comprehensive unclassified capabilities matrix. Understand the tactical advantage Silver Wings Defence provides across land, air, and cyber domains.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-linear-to-tr from-primary to-on-primary-container text-on-primary font-headline font-bold uppercase tracking-widest px-8 py-4 hover:brightness-110 transition-all flex items-center justify-center gap-3">
+              <Link href="/contact?intent=brochure" className="bg-linear-to-tr from-primary to-on-primary-container text-on-primary font-headline font-bold uppercase tracking-widest px-8 py-4 hover:brightness-110 transition-all flex items-center justify-center gap-3">
                 <span className="material-symbols-outlined">download</span>
                 <span>Download 2024 Brochure</span>
-              </button>
+              </Link>
             </div>
             <p className="text-[10px] text-outline font-mono mt-6 tracking-widest uppercase">Document is subject to export control regulations.</p>
           </Reveal>
