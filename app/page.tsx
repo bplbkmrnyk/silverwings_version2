@@ -74,7 +74,7 @@ export default function Home() {
   const heroScale = useTransform(heroScroll, [0, 1], [1, 1.08]);
 
   return (
-    <main className="pt-[100px]">
+    <main className="pt-0">
       {/* ─── Hero Section ─── */}
       <section
         ref={heroRef}
@@ -87,17 +87,20 @@ export default function Home() {
         >
           <img
             alt="Tactical Drone"
-            className="w-full h-full object-cover opacity-50"
+            className="w-full h-full object-cover opacity-45"
             src="/images/backgrounds/home_bg.png"
           />
-          <div className="absolute inset-0 bg-linear-to-r from-background via-background/80 to-transparent" />
-          <div className="absolute inset-0 bg-grid-pattern mix-blend-overlay" />
+          {/* Dark vignette — left side heavier so text is readable, right side lets image breathe */}
+          <div className="absolute inset-0 bg-linear-to-r from-background/90 via-background/50 to-background/20" />
+          {/* Subtle bottom fade to next section */}
+          <div className="absolute inset-0 bg-linear-to-t from-background/60 via-transparent to-background/30" />
+          <div className="absolute inset-0 bg-grid-pattern mix-blend-overlay opacity-15" />
         </motion.div>
 
         {/* Hero content fades + scales out as you scroll away */}
         <motion.div
           style={{ opacity: heroOpacity }}
-          className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 pt-20 md:pt-0"
+          className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 pt-28 md:pt-36"
         >
           <div className="flex flex-col gap-6 md:gap-8 justify-center">
             <div className="flex flex-col gap-2">
@@ -376,7 +379,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact?intent=brochure" className="bg-linear-to-tr from-primary to-on-primary-container text-on-primary font-headline font-bold uppercase tracking-widest px-8 py-4 hover:brightness-110 transition-all flex items-center justify-center gap-3">
                 <span className="material-symbols-outlined">download</span>
-                <span>Download 2024 Brochure</span>
+                <span>Download 2026 Brochure</span>
               </Link>
             </div>
             <p className="text-[10px] text-outline font-mono mt-6 tracking-widest uppercase">Document is subject to export control regulations.</p>

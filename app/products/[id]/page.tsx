@@ -10,13 +10,13 @@ export default async function SingleProductPage({ params }: { params: Promise<{ 
   const name = product?.name || 'Unknown System';
 
   return (
-    <main className="min-h-screen pt-24 bg-transparent flex flex-col relative font-body">
+    <main className="min-h-screen pt-0 bg-[#111417] flex flex-col relative font-body">
       <PageBackground src="/images/backgrounds/products_bg.png" alt="Products Background" />
       {/* Background Grid Overlay */}
       <div className="absolute inset-0 pointer-events-none bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik02MCAwaC0xdjYwaDFWME0wIDYwaDYwdi0xSDB2MXoiIGZpbGw9IiMzMzMiIGZpbGwtb3BhY2l0eT0iLjE1Ii8+PC9nPjwvc3ZnPg==')] opacity-30 mix-blend-overlay"></div>
 
       {/* Top Bar Tech Nav */}
-      <div className="w-full border-b ghost-border px-6 md:px-12 py-4 flex justify-between items-center bg-surface-container-low/80 backdrop-blur-md relative z-10">
+      <div className="w-full border-b ghost-border px-6 md:px-12 py-4 flex justify-between items-center bg-surface-container-low/80 backdrop-blur-md relative z-10 mt-[60px] md:mt-20">
         <Link href="/products" className="font-mono text-sm text-tertiary hover:text-white transition-colors flex items-center gap-2 group">
           <span className="transform group-hover:-translate-x-1 transition-transform">←</span> [ ABORT AND RETURN ]
         </Link>
@@ -77,7 +77,7 @@ export default async function SingleProductPage({ params }: { params: Promise<{ 
             </div>
 
             <div className="space-y-10">
-              <TacticalSpecs />
+              <TacticalSpecs productId={id} />
 
               <section>
                 <h3 className="font-mono text-xs text-primary uppercase tracking-widest border-b ghost-border border-primary/30 pb-2 mb-6">System Analysis</h3>
