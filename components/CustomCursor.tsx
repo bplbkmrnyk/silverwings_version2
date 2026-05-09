@@ -2,14 +2,18 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 export default function CustomCursor() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [hoveredElement, setHoveredElement] = useState<HTMLElement | null>(null);
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
     const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+      
       const target = e.target as HTMLElement;
       // Get the closest clickable element
       const clickable = target?.closest("a, button, [role='button'], input, select, textarea");
@@ -21,35 +25,33 @@ export default function CustomCursor() {
       }
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
-    // Use capture phase for some cases where propagation is stopped
-    window.addEventListener("mouseover", handleMouseMove, true);
+    window.addEventListener("mousemove", handleMouseMove, true);
     
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("mouseover", handleMouseMove, true);
+      window.removeEventListener("mousemove", handleMouseMove, true);
     };
   }, []);
 
   if (!isClient) return null;
 
   const isHovering = hoveredElement !== null;
+  
+  // Default: Small 32x32 box centered on mouse
   let cursorProps = {
-    x: 0,
-    y: 0,
-    width: 0,
-    height: 0,
-    opacity: 0,
+    x: mousePosition.x - 16,
+    y: mousePosition.y - 16,
+    width: 32,
+    height: 32,
   };
 
   if (isHovering && hoveredElement) {
     const rect = hoveredElement.getBoundingClientRect();
+    // Expand box slightly around the element (simulating padding)
     cursorProps = {
-      x: rect.left,
-      y: rect.top,
-      width: rect.width,
-      height: rect.height,
-      opacity: 1,
+      x: rect.left - 8,
+      y: rect.top - 8,
+      width: rect.width + 16,
+      height: rect.height + 16,
     };
   }
 
@@ -59,21 +61,42 @@ export default function CustomCursor() {
       animate={cursorProps}
       transition={{ 
         type: "spring", 
-        stiffness: 500, 
-        damping: 30, 
-        mass: 0.5 
+        stiffness: 400, 
+        damping: 28, 
+        mass: 0.2 
       }}
     >
-      <div className={`absolute -inset-2 border border-primary/20 bg-primary/10 transition-all duration-300 mix-blend-screen backdrop-blur-[2px] ${isHovering ? 'scale-100 opacity-100' : 'scale-150 opacity-0'}`}>
-        {/* Tactical Corner Brackets */}
-        <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-primary"></div>
-        <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-primary"></div>
-        <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-primary"></div>
-        <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-primary"></div>
+      <div className={cn(
+        "absolute inset-0 transition-colors duration-300 mix-blend-screen backdrop-blur-[2px]",
+        isHovering ? "border border-[#eac349]/20 bg-[#eac349]/10" : "bg-transparent"
+      )}>
         
-        {/* Lock indicator */}
-        <div className="absolute -top-6 right-0 font-mono text-[10px] text-primary tracking-widest animate-pulse">
-          SYS.LOCKED
+        {/* State 1: Crosshair (Not Hovering) */}
+        <div className={cn(
+          "absolute inset-0 flex items-center justify-center transition-opacity duration-200",
+          isHovering ? "opacity-0" : "opacity-100"
+        )}>
+          {/* Tactical + Crosshair */}
+          <div className="w-4 h-px bg-[#eac349]/80 absolute"></div>
+          <div className="h-4 w-px bg-[#eac349]/80 absolute"></div>
+          <div className="w-1 h-1 border border-[#eac349] absolute rounded-none"></div>
+        </div>
+
+        {/* State 2: Locked Box (Hovering) */}
+        <div className={cn(
+          "absolute inset-0 transition-opacity duration-300",
+          isHovering ? "opacity-100" : "opacity-0"
+        )}>
+          {/* Tactical Corner Brackets */}
+          <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-[#eac349]"></div>
+          <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-[#eac349]"></div>
+          <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-[#eac349]"></div>
+          <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-[#eac349]"></div>
+          
+          {/* Lock indicator */}
+          <div className="absolute -top-6 right-0 font-mono text-[10px] text-[#eac349] tracking-widest animate-pulse">
+            SYS.LOCKED
+          </div>
         </div>
       </div>
     </motion.div>

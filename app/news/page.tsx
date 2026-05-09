@@ -61,14 +61,14 @@ const NEWS_DATA = {
   ]
 };
 
-import PageBackground from "@/components/PageBackground";
+import { MatrixBackground } from "@/components/ui/matrix-background";
 
 export default function News() {
   const [activeTab, setActiveTab] = useState<Category>("company");
 
   return (
     <main className="grow pt-32 pb-24 relative overflow-hidden">
-      <PageBackground src="/images/backgrounds/news_bg.png" alt="News Background" opacity={0.4} />
+      <MatrixBackground />
       {/* Hero Section */}
       <section className="px-6 md:px-10 max-w-[1600px] mx-auto mb-16 relative">
         <div className="absolute top-0 right-10 text-on-surface-variant font-mono text-[10px] tracking-widest opacity-40 text-right leading-tight hidden md:block">

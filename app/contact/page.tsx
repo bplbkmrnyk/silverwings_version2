@@ -1,6 +1,6 @@
 "use client";
 
-import PageBackground from "@/components/PageBackground";
+import { FrequencyBackground } from "@/components/ui/frequency-background";
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -69,8 +69,9 @@ ${message}
   }
 
   return (
-    <main className="grow pt-32 pb-24 px-6 md:px-12 lg:px-24 relative overflow-hidden">
-      <PageBackground src="/images/backgrounds/contact_bg.png" alt="Contact Background" opacity={0.4} />
+    <>
+      <FrequencyBackground />
+      <main className="grow pt-32 pb-24 px-6 md:px-12 lg:px-24 relative overflow-hidden">
 
       {/* Transmission success toast */}
       {transmitted && (
@@ -187,7 +188,7 @@ ${message}
 
             {/* Actions */}
             <div className="pt-4 flex flex-col gap-4">
-              <button disabled={isSubmitting} className="w-full bg-linear-to-tr from-primary to-on-primary-container text-on-primary font-headline font-bold uppercase tracking-widest px-8 py-4 hover:opacity-90 transition-opacity flex justify-center items-center gap-2 disabled:opacity-50" type="submit">
+              <button disabled={isSubmitting} className="w-full bg-linear-to-tr from-primary to-on-primary-container text-on-primary font-headline font-bold uppercase tracking-widest px-8 py-4 hover:text-[#eac349] transition-all flex justify-center items-center gap-2 disabled:opacity-50" type="submit">
                 {isSubmitting ? "TRANSMITTING..." : "TRANSMIT MESSAGE"}
                 <span className="material-symbols-outlined text-sm">arrow_forward</span>
               </button>
@@ -236,36 +237,44 @@ ${message}
               </div>
             </div>
 
-            {/* Map Preview */}
-            <div className="mt-8 h-48 bg-surface-container-highest relative overflow-hidden border border-outline-variant/15">
-              <img alt="Dark themed satellite map view of Washington DC area" className="w-full h-full object-cover opacity-60 grayscale mix-blend-luminosity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgvwDJC-ouIBzYzmpnvlu2esaJEpN2Rt0dYap5fctrtDw0DjDouMDiODjO2prsBQ59ygxY5_bXcsx48XI29AA8kTLMeofRzRBll52YY9svted3DfH11Joxi84SR_jlN2wrvV0ufQRQdDE30n5XFEP-ABwbKmnP9-Q8dVHHO4OxLuyzxrYPRcSS6olzEKPM-PJsVpc19GHOikXmwN7CnR6jn3aXZ_Vs60Mx_6BdfY2wQrXwmAQRY9U5xaiD-xG4qoeizTOKOT2p58g" />
-              <div className="absolute inset-0 bg-primary/5 mix-blend-overlay"></div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-4 h-4 rounded-none border border-tertiary flex items-center justify-center relative">
-                  <div className="w-1 h-1 bg-tertiary"></div>
-                  <div className="absolute -top-1 -bottom-1 left-1/2 w-px bg-tertiary/50"></div>
-                  <div className="absolute -left-1 -right-1 top-1/2 h-px bg-tertiary/50"></div>
+            {/* Network Status */}
+            <div className="mt-8 border-t border-outline-variant/20 pt-6">
+              <h4 className="text-xs font-label text-on-surface-variant uppercase tracking-widest mb-4">Network Status</h4>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-surface-container-highest p-4 border border-outline-variant/10">
+                  <div className="text-tertiary text-xs font-mono mb-1">UPTIME</div>
+                  <div className="text-white font-headline font-bold text-xl">99.999%</div>
+                </div>
+                <div className="bg-surface-container-highest p-4 border border-outline-variant/10">
+                  <div className="text-primary text-xs font-mono mb-1">AVG RESPONSE</div>
+                  <div className="text-white font-headline font-bold text-xl">&lt; 15 MIN</div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Secure Portal Preview */}
-          <div className="bg-surface-container-high grid-overlay p-8 border border-tertiary/20 relative group">
-            <div className="absolute top-4 right-4 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 bg-military-green animate-pulse"></span>
-              <span className="text-xs font-label text-military-green uppercase tracking-widest">ACTIVE</span>
+          {/* Encryption Info */}
+          <div className="bg-surface-container-high grid-overlay p-8 border border-outline-variant/20 relative group overflow-hidden">
+            <div className="absolute top-4 right-4 text-xs font-mono text-primary uppercase tracking-widest opacity-50">
+              AES-256 SECURE
             </div>
-            <span className="material-symbols-outlined text-3xl text-tertiary mb-4 block">vpn_key</span>
-            <h3 className="text-xl font-headline font-bold text-on-surface uppercase mb-2">Partner Portal</h3>
-            <p className="text-sm text-on-surface-variant font-body mb-6">Access classified documentation, supply chain telemetry, and active deployment status.</p>
-            <Link href="/login" className="w-full border border-tertiary text-tertiary font-headline font-bold uppercase px-6 py-3 hover:bg-tertiary/10 transition-colors flex items-center justify-center gap-2">
-              AUTHORIZE ACCESS
-              <span className="material-symbols-outlined text-sm">login</span>
-            </Link>
+            <div className="relative z-10">
+              <span className="material-symbols-outlined text-3xl text-primary mb-4 block">enhanced_encryption</span>
+              <h3 className="text-xl font-headline font-bold text-on-surface uppercase mb-2">Quantum-Resistant Comms</h3>
+              <p className="text-sm text-on-surface-variant font-body mb-6">
+                All communications transmitted through this gateway are encrypted locally before transmission using military-grade protocols. Your operational data remains strictly classified.
+              </p>
+              <div className="flex items-center gap-3 border-t border-outline-variant/20 pt-4">
+                <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                <span className="text-xs font-mono text-on-surface uppercase tracking-widest">Connection Secure</span>
+              </div>
+            </div>
+            {/* Background scanning effect */}
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent -translate-y-full group-hover:translate-y-full transition-transform duration-1000 ease-in-out"></div>
           </div>
         </div>
       </div>
     </main>
+    </>
   );
 }

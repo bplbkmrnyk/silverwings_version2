@@ -1,8 +1,8 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import HorizontalScroll from "@/components/HorizontalScroll";
 import ParallaxImage from "@/components/ParallaxImage";
 import CircularCardsSection from "@/components/CircularCardsSection";
@@ -64,6 +64,25 @@ function WordReveal({ text, delay = 0 }: { text: string; delay?: number }) {
 }
 
 export default function Home() {
+  const [loadingState, setLoadingState] = useState<"startup" | "launching" | "locked">("startup");
+
+  useEffect(() => {
+    // Phase 1: Startup -> Launching
+    const timer1 = setTimeout(() => {
+      setLoadingState("launching");
+    }, 2500);
+
+    // Phase 2: Launching -> Locked
+    const timer2 = setTimeout(() => {
+      setLoadingState("locked");
+    }, 3500);
+
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+    };
+  }, []);
+
   const heroRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress: heroScroll } = useScroll({
     target: heroRef,
@@ -78,119 +97,241 @@ export default function Home() {
       {/* ─── Hero Section ─── */}
       <section
         ref={heroRef}
-        className="relative min-h-[921px] flex items-center bg-surface-container-lowest overflow-hidden"
+        className="relative min-h-[921px] flex items-center bg-black overflow-hidden"
       >
+        {/* Loading Overlay Mask */}
+        <AnimatePresence>
+          {loadingState !== "locked" && (
+            <motion.div
+              className="fixed inset-0 z-[60] flex flex-col items-center justify-end pb-24 md:pb-32 pointer-events-none"
+              initial={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.8, ease: "easeInOut" }}
+            >
+              <style>{`
+                #main-navbar { opacity: 0 !important; pointer-events: none !important; }
+                body { overflow: hidden !important; }
+              `}</style>
+              <div className="flex flex-col items-center gap-6 z-[70]">
+                <div className="font-mono text-primary text-xs md:text-sm tracking-[0.4em] animate-pulse">
+                  {loadingState === "startup" ? "SYSTEM INITIALIZING..." : "LAUNCHING SEQUENCE..."}
+                </div>
+                <div className="w-48 md:w-64 h-px bg-outline-variant/30 overflow-hidden">
+                  <motion.div
+                    className="h-full bg-primary"
+                    initial={{ width: "0%" }}
+                    animate={{ width: loadingState === "startup" ? "75%" : "100%" }}
+                    transition={{ duration: loadingState === "startup" ? 2.5 : 0.5, ease: "linear" }}
+                  />
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         {/* Parallax background */}
         <motion.div
-          className="absolute inset-0 z-0"
+          className="absolute inset-0 z-0 bg-black overflow-hidden"
           style={{ y: heroBgY, scale: heroScale }}
         >
-          <img
-            alt="Tactical Drone"
-            className="w-full h-full object-cover opacity-45"
-            src="/images/backgrounds/home_bg.png"
-          />
+          {/* Drone Animation Wrapper */}
+          <motion.div
+            className="absolute top-1/2 left-1/2 w-0 h-0 pointer-events-none"
+            style={{ zIndex: loadingState === "locked" ? 10 : 65 }}
+            initial={{ scale: 0.3, y: "50vh" }}
+            animate={{
+              scale: loadingState === "startup" ? 0.3 : 1,
+              y: loadingState === "startup" ? "50vh" : "0vh",
+            }}
+            transition={{
+              duration: 1.2,
+              ease: [0.16, 1, 0.3, 1],
+            }}
+          >
+            {/* Jitter Wrapper for Startup */}
+            <motion.div
+              animate={loadingState === "startup" ? { x: [-1, 1, -1], y: [-0.5, 0.5, -0.5] } : { x: 0, y: 0 }}
+              transition={{ duration: 0.1, repeat: Infinity }}
+              className="absolute top-0 left-0 w-0 h-0"
+            >
+              {/* Animated Flame */}
+              <motion.div
+                className="absolute top-0 left-1/2 -translate-x-1/2 w-48 md:w-80 bg-gradient-to-b from-blue-300 via-orange-500 to-transparent rounded-full blur-3xl mix-blend-screen"
+                animate={loadingState === "startup" ? { height: ["100px", "150px"], opacity: [0.4, 0.6] } : { height: ["400px", "550px", "450px", "600px"], opacity: [0.8, 1, 0.9, 1] }}
+                transition={loadingState === "startup" ? { duration: 0.05, repeat: Infinity, repeatType: "mirror" } : { duration: 0.1, repeat: Infinity, repeatType: "mirror" }}
+                style={{ transformOrigin: "top center" }}
+              />
+              <motion.div
+                className="absolute top-0 left-1/2 -translate-x-1/2 w-24 md:w-40 bg-gradient-to-b from-white via-yellow-200 to-transparent rounded-full blur-xl mix-blend-screen"
+                animate={loadingState === "startup" ? { height: ["80px", "120px"] } : { height: ["300px", "400px", "320px", "420px"] }}
+                transition={{ duration: 0.05, repeat: Infinity, repeatType: "mirror" }}
+                style={{ transformOrigin: "top center" }}
+              />
+              <motion.div
+                className="absolute top-0 left-1/2 -translate-x-1/2 w-8 md:w-16 bg-gradient-to-b from-white to-transparent rounded-full blur-md mix-blend-screen"
+                animate={loadingState === "startup" ? { height: ["50px", "80px"] } : { height: ["200px", "280px", "220px", "300px"] }}
+                transition={{ duration: 0.03, repeat: Infinity, repeatType: "mirror" }}
+                style={{ transformOrigin: "top center" }}
+              />
+
+              {/* Vector Kamikaze Drone */}
+              <svg
+                viewBox="0 0 400 400"
+                className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[95%] w-[600px] h-[600px] md:w-[1200px] md:h-[1200px] drop-shadow-[0_40px_100px_rgba(96,165,250,0.4)] pointer-events-none"
+              >
+                <defs>
+                  <linearGradient id="bodyGrad" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stopColor="#0f1115" />
+                    <stop offset="50%" stopColor="#1a1d24" />
+                    <stop offset="100%" stopColor="#0f1115" />
+                  </linearGradient>
+                  <linearGradient id="wingGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="#15171e" />
+                    <stop offset="100%" stopColor="#08090b" />
+                  </linearGradient>
+                  <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="5" result="blur" />
+                    <feMerge>
+                      <feMergeNode in="blur" />
+                      <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                  </filter>
+                </defs>
+
+                {/* Right Wing */}
+                <polygon points="220,150 380,280 380,320 230,320" fill="url(#wingGrad)" stroke="#2d3748" strokeWidth="1.5" />
+                {/* Right Winglet */}
+                <polygon points="380,280 390,240 380,320" fill="#000" />
+
+                {/* Left Wing */}
+                <polygon points="180,150 20,280 20,320 170,320" fill="url(#wingGrad)" stroke="#2d3748" strokeWidth="1.5" />
+                {/* Left Winglet */}
+                <polygon points="20,280 10,240 20,320" fill="#000" />
+
+                {/* Main Chassis */}
+                <polygon points="200,20 230,120 240,340 200,360 160,340 170,120" fill="url(#bodyGrad)" stroke="#4a5568" strokeWidth="1" />
+
+                {/* Center Panel Lines */}
+                <line x1="200" y1="20" x2="200" y2="360" stroke="#000" strokeWidth="2" opacity="0.5" />
+
+                {/* Cockpit / Sensor Array */}
+                <polygon points="200,60 215,130 200,160 185,130" fill="#000" stroke="#60a5fa" strokeWidth="1" filter="url(#glow)" />
+
+                {/* Center Engine block */}
+                <polygon points="180,340 220,340 230,380 170,380" fill="#050505" stroke="#718096" strokeWidth="1" />
+                {/* Nozzle Inner Glow */}
+                <ellipse cx="200" cy="380" rx="22" ry="8" fill="#fff" filter="url(#glow)" />
+                <ellipse cx="200" cy="380" rx="28" ry="12" fill="#60a5fa" opacity="0.6" filter="url(#glow)" />
+
+                {/* Neon Accents */}
+                <line x1="240" y1="300" x2="360" y2="300" stroke="#60a5fa" strokeWidth="2" filter="url(#glow)" />
+                <line x1="160" y1="300" x2="40" y2="300" stroke="#60a5fa" strokeWidth="2" filter="url(#glow)" />
+              </svg>
+            </motion.div>
+          </motion.div>
+
           {/* Dark vignette — left side heavier so text is readable, right side lets image breathe */}
-          <div className="absolute inset-0 bg-linear-to-r from-background/90 via-background/50 to-background/20" />
+          <div className="absolute inset-0 bg-linear-to-r from-black/95 via-black/40 to-transparent z-[5]" />
           {/* Subtle bottom fade to next section */}
-          <div className="absolute inset-0 bg-linear-to-t from-background/60 via-transparent to-background/30" />
-          <div className="absolute inset-0 bg-grid-pattern mix-blend-overlay opacity-15" />
+          <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-transparent z-[5]" />
         </motion.div>
 
         {/* Hero content fades + scales out as you scroll away */}
-        <motion.div
-          style={{ opacity: heroOpacity }}
-          className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 pt-28 md:pt-36"
-        >
-          <div className="flex flex-col gap-6 md:gap-8 justify-center">
-            <div className="flex flex-col gap-2">
-              <motion.span
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] as const }}
-                className="text-tertiary font-label text-sm tracking-[0.2em] uppercase font-bold"
-              >
-                Classified Systems / Tier 1
-              </motion.span>
-              <h1 className="font-headline text-5xl sm:text-6xl md:text-8xl font-extrabold text-on-surface leading-none tracking-[-0.02em] uppercase">
-                <motion.span
-                  initial={{ opacity: 0, y: 80 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] as const }}
-                  className="block"
-                >
-                  Precision.
-                </motion.span>
-                <motion.span
-                  initial={{ opacity: 0, y: 80 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1, delay: 0.45, ease: [0.16, 1, 0.3, 1] as const }}
-                  className="block text-primary"
-                >
-                  Protection.
-                </motion.span>
-                <motion.span
-                  initial={{ opacity: 0, y: 80 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] as const }}
-                  className="block"
-                >
-                  Power.
-                </motion.span>
-              </h1>
-            </div>
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.8, ease: [0.16, 1, 0.3, 1] as const }}
-              className="text-on-surface-variant text-base md:text-xl font-body max-w-lg leading-relaxed border-l-2 border-outline-variant pl-4 md:pl-6"
-            >
-              Next-generation aerospace defense solutions engineered for zero-tolerance operational environments.
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 1, ease: [0.16, 1, 0.3, 1] as const }}
-              className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-4"
-            >
-              <Link href="/contact" className="bg-linear-to-tr from-primary to-on-primary-container text-on-primary font-headline font-bold uppercase tracking-widest px-6 md:px-8 py-4 hover:brightness-110 transition-all flex items-center justify-between group">
-                <span>Request Proposal</span>
-                <span className="material-symbols-outlined ml-4 group-hover:translate-x-1 transition-transform">arrow_forward</span>
-              </Link>
-              <Link href="/contact" className="border border-tertiary text-tertiary font-headline font-bold uppercase tracking-widest px-6 md:px-8 py-4 hover:bg-tertiary/10 transition-colors flex items-center justify-between">
-                <span>Explore Solutions</span>
-                <span className="material-symbols-outlined ml-4">radar</span>
-              </Link>
-            </motion.div>
-          </div>
+        {loadingState === "locked" && (
           <motion.div
-            initial={{ opacity: 0, x: 60 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1.1, delay: 0.7, ease: [0.16, 1, 0.3, 1] as const }}
-            className="hidden md:flex justify-end items-end pb-12"
+            style={{ opacity: heroOpacity }}
+            className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-8 pt-12 md:pt-28"
           >
-            <div className="bg-surface-container-highest/60 backdrop-blur-xl p-6 w-72 border-t-2 border-primary ghost-border">
-              <div className="flex justify-between items-start mb-6">
-                <span className="material-symbols-outlined text-primary">my_location</span>
-                <span className="text-[10px] text-tertiary font-mono tracking-widest">SYS.ONL.994</span>
+            <div className="flex flex-col gap-6 md:gap-8 justify-center">
+              <div className="flex flex-col gap-2">
+                <motion.span
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] as const }}
+                  className="text-tertiary font-label text-sm tracking-[0.2em] uppercase font-bold"
+                >
+                  Classified Systems / Tier 1
+                </motion.span>
+                <h1 className="font-headline text-5xl sm:text-6xl md:text-8xl font-extrabold text-on-surface leading-none tracking-[-0.02em] uppercase">
+                  <motion.span
+                    initial={{ opacity: 0, y: 80 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] as const }}
+                    className="block"
+                  >
+                    Precision.
+                  </motion.span>
+                  <motion.span
+                    initial={{ opacity: 0, y: 80 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, delay: 0.45, ease: [0.16, 1, 0.3, 1] as const }}
+                    className="block text-primary"
+                  >
+                    Protection.
+                  </motion.span>
+                  <motion.span
+                    initial={{ opacity: 0, y: 80 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] as const }}
+                    className="block"
+                  >
+                    Power.
+                  </motion.span>
+                </h1>
               </div>
-              <div className="space-y-4 font-mono text-xs">
-                <div className="flex justify-between border-b border-outline-variant pb-2">
-                  <span className="text-on-surface-variant">AIRSPACE</span>
-                  <span className="text-military-green font-bold">SECURE</span>
-                </div>
-                <div className="flex justify-between border-b border-outline-variant pb-2">
-                  <span className="text-on-surface-variant">ASSETS</span>
-                  <span className="text-on-surface">14 ACTIVE</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-on-surface-variant">THREAT LVL</span>
-                  <span className="text-on-surface">NOMINAL</span>
-                </div>
-              </div>
+              <motion.p
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.9, delay: 0.8, ease: [0.16, 1, 0.3, 1] as const }}
+                className="text-on-surface-variant text-base md:text-xl font-body max-w-lg leading-relaxed border-l-2 border-outline-variant pl-4 md:pl-6"
+              >
+                Next-generation aerospace defense solutions engineered for zero-tolerance operational environments.
+              </motion.p>
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.9, delay: 1, ease: [0.16, 1, 0.3, 1] as const }}
+                className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-4"
+              >
+                <Link href="/contact" className="bg-linear-to-tr from-primary to-on-primary-container text-on-primary font-headline font-bold uppercase tracking-widest px-6 md:px-8 py-4 hover:text-[#eac349] transition-all flex items-center justify-between group">
+                  <span>Request Proposal</span>
+                  <span className="material-symbols-outlined ml-4 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </Link>
+                <Link href="/contact" className="border border-tertiary text-tertiary font-headline font-bold uppercase tracking-widest px-6 md:px-8 py-4 hover:bg-tertiary/10 transition-colors flex items-center justify-between">
+                  <span>Explore Solutions</span>
+                  <span className="material-symbols-outlined ml-4">radar</span>
+                </Link>
+              </motion.div>
             </div>
+            <motion.div
+              initial={{ opacity: 0, x: 60 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1.1, delay: 0.7, ease: [0.16, 1, 0.3, 1] as const }}
+              className="hidden md:flex justify-end items-end pb-12"
+            >
+              <div className="bg-surface-container-highest/60 backdrop-blur-xl p-6 w-72 border-t-2 border-primary ghost-border">
+                <div className="flex justify-between items-start mb-6">
+                  <span className="material-symbols-outlined text-primary">my_location</span>
+                  <span className="text-[10px] text-tertiary font-mono tracking-widest">SYS.ONL.994</span>
+                </div>
+                <div className="space-y-4 font-mono text-xs">
+                  <div className="flex justify-between border-b border-outline-variant pb-2">
+                    <span className="text-on-surface-variant">AIRSPACE</span>
+                    <span className="text-military-green font-bold">SECURE</span>
+                  </div>
+                  <div className="flex justify-between border-b border-outline-variant pb-2">
+                    <span className="text-on-surface-variant">ASSETS</span>
+                    <span className="text-on-surface">14 ACTIVE</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-on-surface-variant">THREAT LVL</span>
+                    <span className="text-on-surface">NOMINAL</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
-        </motion.div>
+        )}
       </section>
 
       {/* ─── Sovereign Guard — Sticky Parallax ─── */}
@@ -377,7 +518,7 @@ export default function Home() {
               Review our comprehensive unclassified capabilities matrix. Understand the tactical advantage Silver Wings Defence provides across land, air, and cyber domains.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact?intent=brochure" className="bg-linear-to-tr from-primary to-on-primary-container text-on-primary font-headline font-bold uppercase tracking-widest px-8 py-4 hover:brightness-110 transition-all flex items-center justify-center gap-3">
+              <Link href="/contact?intent=brochure" className="bg-linear-to-tr from-primary to-on-primary-container text-on-primary font-headline font-bold uppercase tracking-widest px-8 py-4 hover:text-[#eac349] transition-all flex items-center justify-center gap-3">
                 <span className="material-symbols-outlined">download</span>
                 <span>Download 2026 Brochure</span>
               </Link>

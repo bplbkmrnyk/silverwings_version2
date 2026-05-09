@@ -1,10 +1,13 @@
-import PageBackground from "@/components/PageBackground";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 import Link from "next/link";
 
 export default function Services() {
   return (
-    <main className="pt-32 pb-24 px-6 md:px-12 lg:px-24 max-w-[1600px] mx-auto relative">
-      <PageBackground src="/images/backgrounds/services_bg.png" alt="Services Background" opacity={0.4} />
+    <>
+      <div className="fixed inset-0 z-[-1] bg-black overflow-hidden">
+        <BackgroundBeams />
+      </div>
+      <main className="pt-32 pb-24 px-6 md:px-12 lg:px-24 max-w-[1600px] mx-auto relative">
       {/* Header */}
       <header className="mb-20">
         <p className="text-tertiary font-label text-sm tracking-widest uppercase mb-4 pl-4 border-l-2 border-tertiary">Operational Capabilities</p>
@@ -128,5 +131,6 @@ export default function Services() {
         <div>OP.MODE: TACTICAL</div>
       </div>
     </main>
+    </>
   );
 }
