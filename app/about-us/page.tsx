@@ -5,18 +5,28 @@ import Link from "next/link";
 
 export default function AboutUs() {
   return (
-    <main className="pt-32 pb-24 px-6 md:px-12 lg:px-24 max-w-[1920px] mx-auto flex flex-col gap-32 overflow-hidden">
-      {/* Hero Section: Origins & Philosophy */}
-      <section className="relative min-h-[70vh] flex items-center py-20 mt-4 md:mt-10 overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src="/images/backgrounds/about_bg.png"
-            alt="Command Center"
-            className="w-full h-full object-cover opacity-50"
-          />
-          <div className="absolute inset-0 bg-linear-to-r from-background via-background/80 to-transparent" />
-        </div>
+    <>
+      {/* Fixed Full Page Background */}
+      <div className="fixed inset-0 z-[-1] bg-[#0a0c10] pointer-events-none overflow-hidden">
+        <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="dot-glow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stopColor="rgba(255, 255, 255, 0.4)" />
+              <stop offset="40%" stopColor="rgba(255, 255, 255, 0.1)" />
+              <stop offset="100%" stopColor="rgba(255, 255, 255, 0)" />
+            </radialGradient>
+            <pattern id="dot-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+              <circle cx="20" cy="20" r="3" fill="url(#dot-glow)" />
+              <circle cx="20" cy="20" r="1.5" fill="rgba(255, 255, 255, 0.7)" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#dot-grid)" />
+        </svg>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a0c10]/40 to-background" />
+      </div>
+      <main className="pt-32 pb-24 px-6 md:px-12 lg:px-24 max-w-[1920px] mx-auto flex flex-col gap-32">
+        {/* Hero Section: Origins & Philosophy */}
+        <section className="relative min-h-[70vh] flex items-center py-20 mt-4 md:mt-10">
         <div className="w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-16 relative z-10">
 
           {/* Left: Content Box */}
@@ -199,6 +209,7 @@ export default function AboutUs() {
           </div>
         </div>
       </section>
-    </main>
+      </main>
+    </>
   );
 }
