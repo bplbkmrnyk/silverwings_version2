@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Services() {
   return (
-    <main className="pt-32 pb-24 px-6 md:px-12 lg:px-24 max-w-[1600px] mx-auto relative overflow-hidden">
+    <main className="pt-32 pb-24 px-6 md:px-12 lg:px-24 max-w-[1600px] mx-auto relative">
       <PageBackground src="/images/backgrounds/services_bg.png" alt="Services Background" opacity={0.4} />
       {/* Header */}
       <header className="mb-20">
@@ -122,7 +122,7 @@ export default function Services() {
       </div>
       
       {/* Ambient Data Overlay */}
-      <div className="fixed bottom-8 right-8 pointer-events-none opacity-30 md:flex flex-col items-end gap-1 font-mono text-[10px] text-primary hidden">
+      <div className="sticky bottom-8 ml-auto w-max pointer-events-none opacity-30 md:flex flex-col items-end gap-1 font-mono text-[10px] text-primary hidden z-50">
         <div>SYS.STATUS: ONLINE</div>
         <div>NET.SEC: VERIFIED</div>
         <div>OP.MODE: TACTICAL</div>

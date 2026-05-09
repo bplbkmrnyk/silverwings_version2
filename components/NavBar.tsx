@@ -1,5 +1,6 @@
 "use client";
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 
 export default function NavBar() {
@@ -17,9 +18,9 @@ export default function NavBar() {
           id="nav-logo"
           href="/"
           aria-label="Silver Wings Defence Home"
-          className="text-xl md:text-2xl font-black tracking-tighter text-[#afc8f0] font-headline uppercase relative z-50"
+          className="relative z-50 flex items-center group"
         >
-          SILVER WINGS<span className="hidden sm:inline"> DEFENCE</span>
+          <Image src="/images/SilverWingLogo.png" alt="Silver Wings Defence Logo" width={200} height={60} className="h-10 md:h-12 w-auto drop-shadow-[0_0_12px_rgba(255,255,255,0.5)] group-hover:drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] transition-all duration-300" priority />
         </Link>
 
         {/* Desktop links */}
